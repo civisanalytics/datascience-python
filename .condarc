@@ -1,0 +1,7 @@
+channels:
+    - defaults
+
+show_channel_urls: True
+
+create_default_packages:
+    - nomkl
