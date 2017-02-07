@@ -52,3 +52,8 @@ COPY environment.yml environment.yml
 RUN conda install -y boto && \
     conda install -y nomkl && \
     conda env create -f environment.yml
+
+ENV VERSION=1.0.1\
+    VERSION_MAJOR=1\
+    VERSION_MINOR=0\
+    VERSION_MICRO=1
