@@ -45,6 +45,17 @@ You can run a Python command with
 docker run civisanalytics/datascience-python:latest python -c "import pandas; print(pandas.__version__)"
 ```
 
+The image contains environment variables which allow you to find
+the current version. There are four environment variables defined:
+```
+VERSION
+VERSION_MAJOR
+VERSION_MINOR
+VERSION_MICRO
+```
+VERSION contains the full version string, e.g. "1.0.3". VERSION_MAJOR,
+VERSION_MINOR, and VERSION_MICRO each contain a single integer.
+
 # Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md) for information about contributing to this project.
