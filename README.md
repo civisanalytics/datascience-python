@@ -1,5 +1,7 @@
 # Data Science Docker Image
 
+[![CircleCI](https://circleci.com/gh/civisanalytics/datascience-python/tree/master.svg?style=svg)](https://circleci.com/gh/civisanalytics/datascience-python/tree/master)
+
 This image is created from the official Ubuntu 14.04 Docker image and contains popular Python packages for data science.
 
 # Introduction
