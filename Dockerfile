@@ -53,6 +53,13 @@ RUN conda install -y boto && \
     conda install -y nomkl && \
     conda env create -f environment.yml
 
+# We aren't running a GUI, so force matplotlib to use
+# the non-interactive "Agg" backend for graphics.
+RUN echo "backend      : Agg" > matplotlibrc
+
+# Run matplotlib once to build the font cache
+RUN python -c "import matplotlib.pyplot"
+
 ENV VERSION=1.0.1\
     VERSION_MAJOR=1\
     VERSION_MINOR=0\
