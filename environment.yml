@@ -35,7 +35,7 @@ dependencies:
   - awscli==1.11.27
   - boto==2.43.0
   - boto3==1.4.2
-  - civis==1.1.0
+  - civis==1.2.0
   - dropbox==7.1.1
   - ftputil==3.3.1
   - pysftp==0.2.9
