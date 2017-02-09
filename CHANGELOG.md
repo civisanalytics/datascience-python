@@ -7,8 +7,8 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A minor version will increase if one or more packages contained in the Docker image add new, backwards-compatible features, or if a new package is added to the Docker image.
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompabile changes in the execution environment.
 
-## [1.1.0] - 2017-02-10
-### Changed
+## [1.1.1] - 2017-02-09
+### Fixed
 - Add `source activate datascience` to `etc/profile` to ensure bash enjoys the datascience environment (#4)
 
 ## [1.1.0] - 2017-02-10
