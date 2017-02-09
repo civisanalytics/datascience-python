@@ -36,7 +36,8 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     /opt/conda/bin/conda install --yes conda==4.1.11
 
 # environment for bash
-RUN echo "source activate datascience" >> /etc/bash.bashrc
+RUN echo "source activate datascience" >> /etc/profile && \
+    echo "source activate datascience" >> /etc/bash.bashrc
 
 # Red Hat and Debian use different names for this file. git2R wants the latter.
 # See conda-recipes GH 423
@@ -55,7 +56,9 @@ RUN conda install -y boto && \
 
 # We aren't running a GUI, so force matplotlib to use
 # the non-interactive "Agg" backend for graphics.
-RUN echo "backend      : Agg" > matplotlibrc
+ENV MATPLOTLIBRC=${HOME}/.config/matplotlib/matplotlibrc
+RUN mkdir -p ${HOME}/.config/matplotlib
+RUN echo "backend      : Agg" > ${HOME}/.config/matplotlib/matplotlibrc
 
 # Run matplotlib once to build the font cache
 RUN python -c "import matplotlib.pyplot"
