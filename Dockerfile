@@ -55,9 +55,9 @@ RUN conda install -y boto && \
 
 # We aren't running a GUI, so force matplotlib to use
 # the non-interactive "Agg" backend for graphics.
-ENV MATPLOTLIBRC=/opt/matplotlibrc/matplotlibrc
-RUN mkdir -p /opt/matplotlibrc/
-RUN echo "backend      : Agg" > /opt/matplotlibrc/matplotlibrc
+ENV MATPLOTLIBRC=${HOME}/.config/matplotlib/matplotlibrc
+RUN mkdir -p ${HOME}/.config/matplotlib
+RUN echo "backend      : Agg" > ${HOME}/.config/matplotlib/matplotlibrc
 
 # Run matplotlib once to build the font cache
 RUN python -c "import matplotlib.pyplot"
