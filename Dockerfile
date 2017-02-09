@@ -63,7 +63,7 @@ RUN echo "backend      : Agg" > ${HOME}/.config/matplotlib/matplotlibrc
 # Run matplotlib once to build the font cache
 RUN python -c "import matplotlib.pyplot"
 
-ENV VERSION=1.0.1\
+ENV VERSION=1.1.0\
     VERSION_MAJOR=1\
-    VERSION_MINOR=0\
-    VERSION_MICRO=1
+    VERSION_MINOR=1\
+    VERSION_MICRO=0
