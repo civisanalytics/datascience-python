@@ -9,6 +9,10 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## [1.1.0] - 2017-02-10
 ### Changed
+- Add `source activate datascience` to `etc/profile` to ensure bash enjoys the datascience environment (#4)
+
+## [1.1.0] - 2017-02-10
+### Changed
 - Add environment variables which record the image version number (#1)
 - Upgraded civis library from v1.1.0 to v1.2.0
 
