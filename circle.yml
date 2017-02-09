@@ -12,4 +12,4 @@ test:
         - docker run civisanalytics/datascience-python python -c "from scipy.linalg import _fblas"
         - docker run civisanalytics/datascience-python python -c "import numpy, os; import matplotlib.pyplot as plt; x = numpy.arange(100); y = numpy.sin(x); plt.plot(x, y);"
         - docker run civisanalytics/datascience-python python -c "import seaborn"
-	- docker run -t civisanalytics/datascience-python /bin/bash -c "python -c 'import numpy'"
+        - docker run -t civisanalytics/datascience-python /bin/bash -c "python -c 'import numpy'"
