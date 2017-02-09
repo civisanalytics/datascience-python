@@ -36,7 +36,8 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     /opt/conda/bin/conda install --yes conda==4.1.11
 
 # environment for bash
-RUN echo "source activate datascience" >> /etc/profile
+RUN echo "source activate datascience" >> /etc/profile && \
+    echo "source activate datascience" >> /etc/bash.bashrc
 
 # Red Hat and Debian use different names for this file. git2R wants the latter.
 # See conda-recipes GH 423
