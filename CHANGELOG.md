@@ -13,6 +13,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 - Upgraded civis library from v1.1.0 to v1.2.0
 
 ### Fixed
+- Changed location of `matplotlibrc` to always be found (#6)
 - Add `matplotlibrc` file which changes the backend default to "Agg" (#3)
 - Add `source activate datascience` to `etc/profile` to ensure bash enjoys the datascience environment (#4)
 
