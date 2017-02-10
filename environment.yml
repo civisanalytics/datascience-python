@@ -1,4 +1,4 @@
-name: datascience
+name: root
 dependencies:
 - beautifulsoup4=4.5.1
 - boto=2.43.0

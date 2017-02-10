@@ -9,8 +9,7 @@ ENV LANG=en_US.UTF-8 \
     LANGUAGE=en_US:en \
     LC_ALL=en_US.UTF-8 \
     CONDARC=/opt/conda/.condarc \
-    BASH_ENV=/etc/profile \
-    PATH=/opt/conda/envs/datascience/bin:/opt/conda/bin:$PATH
+    PATH=/opt/conda/bin:$PATH
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
   apt-get install -y software-properties-common && \
@@ -36,10 +35,6 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     /opt/conda/bin/conda install --yes conda==4.1.11 && \
     echo "conda ==4.1.11" > /opt/conda/conda-meta/pinned
 
-# environment for bash
-RUN echo "source activate datascience" >> /etc/profile && \
-    echo "source activate datascience" >> /etc/bash.bashrc
-
 # Red Hat and Debian use different names for this file. git2R wants the latter.
 # See conda-recipes GH 423
 RUN ln -s /opt/conda/lib/libopenblas.so /opt/conda/lib/libblas.so && \
@@ -53,7 +48,7 @@ COPY .condarc /opt/conda/.condarc
 COPY environment.yml environment.yml
 RUN conda install -y boto && \
     conda install -y nomkl && \
-    conda env create -f environment.yml
+    conda env update -f environment.yml
 
 # We aren't running a GUI, so force matplotlib to use
 # the non-interactive "Agg" backend for graphics.
