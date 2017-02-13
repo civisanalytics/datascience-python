@@ -12,6 +12,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 - Add environment variables which record the image version number (#1)
 - Upgraded civis library from v1.1.0 to v1.2.0 (#5)
 - Various changes to packages to avoid installing MKL (#9)
+- Pinned conda to 4.1.11 (#9)
 
 ### Fixed
 - Changed location of `matplotlibrc` to always be found (#6)
