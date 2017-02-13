@@ -31,9 +31,8 @@ to retrieve a reproducible environment.
 
 # Usage
 
-Inside the datascience-python Docker image, Python packages are installed in a
-conda environment named "datascience", which is automatically entered when a user
-enters the container. For a full list of included Python libraries, see the
+Inside the datascience-python Docker image, Python packages are installed in the `root`
+environment. For a full list of included Python libraries, see the
 [environment.yml](environment.yml) file.
 
 To start a Docker container from the datascience-python image and
@@ -73,7 +72,7 @@ and describe any changes in the [change log](CHANGELOG.md).
 This repo has autobuild enabled. Any PR that is merged to master will
 be built as the `latest` tag on Dockerhub.
 Once you are ready to create a new version, go to the "releases" tab of the repository and click
-"Draft a new release". Github will prompt you to create a new tag, release title, and release 
+"Draft a new release". Github will prompt you to create a new tag, release title, and release
 description. The tag should use semantic versioning in the form "vX.X.X"; "major.minor.micro".
 The title of the release should be the same as the tag. Include a change log in the release description.
 Once the release is tagged, DockerHub will automatically build three identical containers, with labels
