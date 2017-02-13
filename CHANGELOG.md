@@ -10,7 +10,8 @@ Version number changes (major.minor.micro) in this package denote the following:
 ## [1.1.0] - 2017-02-10
 ### Changed
 - Add environment variables which record the image version number (#1)
-- Upgraded civis library from v1.1.0 to v1.2.0
+- Upgraded civis library from v1.1.0 to v1.2.0 (#5)
+- Various changes to packages to avoid installing MKL (#7)
 
 ### Fixed
 - Changed location of `matplotlibrc` to always be found (#6)
@@ -20,4 +21,3 @@ Version number changes (major.minor.micro) in this package denote the following:
 ## [1.0.0] - 2017-01-17
 
 * Initial Release
-
