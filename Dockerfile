@@ -33,7 +33,8 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     wget --quiet https://repo.continuum.io/miniconda/Miniconda3-4.1.11-Linux-x86_64.sh && \
     /bin/bash /Miniconda3-4.1.11-Linux-x86_64.sh -b -p /opt/conda && \
     rm Miniconda3-4.1.11-Linux-x86_64.sh && \
-    /opt/conda/bin/conda install --yes conda==4.1.11
+    /opt/conda/bin/conda install --yes conda==4.1.11 && \
+    echo "conda ==4.1.11" > /opt/conda/conda-meta/pinned
 
 # environment for bash
 RUN echo "source activate datascience" >> /etc/profile && \
