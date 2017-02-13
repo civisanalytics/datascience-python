@@ -9,6 +9,7 @@ ENV LANG=en_US.UTF-8 \
     LANGUAGE=en_US:en \
     LC_ALL=en_US.UTF-8 \
     CONDARC=/opt/conda/.condarc \
+    BASH_ENV=/etc/profile \
     PATH=/opt/conda/bin:$PATH
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
@@ -29,11 +30,11 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
       curl
 
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
-    wget --quiet https://repo.continuum.io/miniconda/Miniconda3-4.1.11-Linux-x86_64.sh && \
-    /bin/bash /Miniconda3-4.1.11-Linux-x86_64.sh -b -p /opt/conda && \
-    rm Miniconda3-4.1.11-Linux-x86_64.sh && \
-    /opt/conda/bin/conda install --yes conda==4.1.11 && \
-    echo "conda ==4.1.11" > /opt/conda/conda-meta/pinned
+    wget --quiet https://repo.continuum.io/miniconda/Miniconda3-4.2.12-Linux-x86_64.sh && \
+    /bin/bash /Miniconda3-4.2.12-Linux-x86_64.sh -b -p /opt/conda && \
+    rm Miniconda3-4.2.12-Linux-x86_64.sh && \
+    /opt/conda/bin/conda install --yes conda==4.2.12 && \
+    echo "conda ==4.2.12" > /opt/conda/conda-meta/pinned
 
 # Red Hat and Debian use different names for this file. git2R wants the latter.
 # See conda-recipes GH 423
