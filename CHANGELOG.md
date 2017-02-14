@@ -7,6 +7,11 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A minor version will increase if one or more packages contained in the Docker image add new, backwards-compatible features, or if a new package is added to the Docker image.
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompabile changes in the execution environment.
 
+## [2.0.0]
+### Changed
+- Moved conda to version 4.2.12 (#8)
+- Moved package install from the `datascience` environment to `root` (#8)
+
 ## [1.1.0] - 2017-02-13
 ### Changed
 - Add environment variables which record the image version number (#1)
