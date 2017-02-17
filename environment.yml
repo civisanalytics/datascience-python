@@ -7,6 +7,7 @@ dependencies:
 - jsonschema=2.5.1
 - jupyter=1.0.0
 - jinja2=2.8
+- joblib=0.9.4
 - libffi=3.2.1
 - libgcc=5.2.0
 - libgfortran=3.0.0
@@ -27,7 +28,7 @@ dependencies:
 - pytest=3.0.5
 - python=3.5.2
 - pyyaml=3.11
-- requests=2.12.1
+- requests=2.12.4
 - seaborn=0.7.1
 - scipy=0.18.1
 - scikit-learn=0.18.1
