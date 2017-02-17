@@ -11,6 +11,13 @@ Version number changes (major.minor.micro) in this package denote the following:
 ### Changed
 - Moved conda to version 4.3.11 (#11)
 - Moved python to version 3.6.0 (#11)
+- Various package version changes
+    - boto 2.45.0
+    - cython 0.25.2
+    - jinja2 2.8
+    - joblib 0.9.4
+    - pyyaml 3.12
+    - requests=2.12.4    
 - Moved conda to version 4.2.12 (#8)
 - Moved package install from the `datascience` environment to `root` (#8)
 
