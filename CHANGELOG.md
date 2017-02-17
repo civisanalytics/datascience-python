@@ -11,7 +11,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 ### Changed
 - Moved conda to version 4.3.11 (#11)
 - Moved python to version 3.6.0 (#11)
-- Various package version changes
+- Various package version changes (#11)
     - boto 2.45.0
     - cython 0.25.2
     - jinja2 2.8
