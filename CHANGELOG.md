@@ -9,6 +9,8 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## [2.0.0]
 ### Changed
+- Moved conda to version 4.3.11 (#11)
+- Moved python to version 3.6.0 (#11)
 - Moved conda to version 4.2.12 (#8)
 - Moved package install from the `datascience` environment to `root` (#8)
 
