@@ -15,7 +15,7 @@ Version number changes (major.minor.micro) in this package denote the following:
     - boto 2.45.0
     - cython 0.25.2
     - jinja2 2.8
-    - joblib 0.9.4
+    - joblib 0.10.3
     - pyyaml 3.12
     - requests=2.12.4    
 - Moved conda to version 4.2.12 (#8)

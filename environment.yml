@@ -5,7 +5,7 @@ dependencies:
 - cython=0.25.2
 - ipython=5.1.0
 - jinja2=2.8
-- joblib=0.9.4
+- joblib=0.10.3
 - jsonschema=2.5.1
 - jupyter=1.0.0
 - libffi=3.2.1
