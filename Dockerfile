@@ -59,7 +59,7 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     rm Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh && \
     /opt/conda/bin/conda install --yes conda==${CIVIS_CONDA_VERSION} && \
     echo "conda ==${CIVIS_CONDA_VERSION}" > /opt/conda/conda-meta/pinned && \
-    conda install python==${CIVIS_PYTHON_VERSION} && \
+    conda install --yes python==${CIVIS_PYTHON_VERSION} && \
     echo "\npython ==${CIVIS_PYTHON_VERSION}" >> /opt/conda/conda-meta/pinned
 
 # Red Hat and Debian use different names for this file. git2R wants the latter.
