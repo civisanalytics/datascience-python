@@ -31,6 +31,22 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
       ca-certificates \
       curl
 
+# Conda install. 
+#
+# Everything is installed in the root environment. This allows for 
+# upgrades to the packages and eliminates the pain of trying to activate 
+# some other environment automatically for the many different ways 
+# people can use a docker image.
+#
+# Things are pinned to prevent upgrades from conda and force it to 
+# resolve dependencies relative to a fixed conda & python version.
+# 
+# The ordering of these steps seems to matter. You seem to have to 
+# install a specific python version by hand and then pin it.
+# 1) install conda
+# 2) pin conda to the version given by CIVIS_CONDA_VERSION
+# 3) install the python version CIVIS_PYTHON_VERSION
+# 4) pin the python version
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     wget --quiet https://repo.continuum.io/miniconda/Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh && \
     /bin/bash /Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh -b -p /opt/conda && \
