@@ -40,6 +40,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
 #
 # Things are pinned to prevent upgrades from conda and force it to 
 # resolve dependencies relative to a fixed conda & python version.
+#
+# Note that the python version is also listed in the enviornment.yml 
+# file. The version in CIVIS_PYTHON_VERSION should take precedence. 
+# If you want to change the python version, you need to change it in 
+# both places. (It could be removed from the environment.yml 
+# file in fact.)
 # 
 # The ordering of these steps seems to matter. You seem to have to 
 # install a specific python version by hand and then pin it.
