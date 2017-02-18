@@ -10,7 +10,9 @@ ENV LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8 \
     CONDARC=/opt/conda/.condarc \
     BASH_ENV=/etc/profile \
-    PATH=/opt/conda/bin:$PATH
+    PATH=/opt/conda/bin:$PATH \
+    CIVIS_CONDA_VERSION=4.3.11 \
+    CIVIS_PYTHON_VERSION=3.6.0
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
   apt-get install -y software-properties-common && \
@@ -30,11 +32,13 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
       curl
 
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
-    wget --quiet https://repo.continuum.io/miniconda/Miniconda3-4.2.12-Linux-x86_64.sh && \
-    /bin/bash /Miniconda3-4.2.12-Linux-x86_64.sh -b -p /opt/conda && \
-    rm Miniconda3-4.2.12-Linux-x86_64.sh && \
-    /opt/conda/bin/conda install --yes conda==4.2.12 && \
-    echo "conda ==4.2.12" > /opt/conda/conda-meta/pinned
+    wget --quiet https://repo.continuum.io/miniconda/Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh && \
+    /bin/bash /Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh -b -p /opt/conda && \
+    rm Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh && \
+    /opt/conda/bin/conda install --yes conda==${CIVIS_CONDA_VERSION} && \
+    echo "conda ==${CIVIS_CONDA_VERSION}" > /opt/conda/conda-meta/pinned && \
+    conda install python==${CIVIS_PYTHON_VERSION} && \
+    echo "\npython ==${CIVIS_PYTHON_VERSION}" >> /opt/conda/conda-meta/pinned
 
 # Red Hat and Debian use different names for this file. git2R wants the latter.
 # See conda-recipes GH 423

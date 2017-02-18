@@ -1,12 +1,12 @@
 name: root
 dependencies:
 - beautifulsoup4=4.5.1
-- boto=2.43.0
-- cython=0.25.1
+- boto=2.45.0
+- cython=0.25.2
 - ipython=5.1.0
+- jinja2=2.8
 - jsonschema=2.5.1
 - jupyter=1.0.0
-- jinja2=2.8
 - libffi=3.2.1
 - libgcc=5.2.0
 - libgfortran=3.0.0
@@ -25,9 +25,9 @@ dependencies:
 - psycopg2=2.6.2
 - pycrypto=2.6.1
 - pytest=3.0.5
-- python=3.5.2
-- pyyaml=3.11
-- requests=2.12.1
+- python=3.6.0
+- pyyaml=3.12
+- requests=2.12.4
 - seaborn=0.7.1
 - scipy=0.18.1
 - scikit-learn=0.18.1
@@ -38,6 +38,7 @@ dependencies:
   - civis==1.2.0
   - dropbox==7.1.1
   - ftputil==3.3.1
+  - joblib==0.10.3
   - pysftp==0.2.9
   - python-simple-hipchat==0.4.0
   - urllib3==1.19
