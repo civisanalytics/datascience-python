@@ -9,6 +9,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## [2.0.0]
 ### Added
+- glmnet 1.0.0 (#14)
 - joblib 0.10.3 (#11)
 
 ### Changed
