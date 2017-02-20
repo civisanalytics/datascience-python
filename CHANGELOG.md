@@ -8,17 +8,25 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompabile changes in the execution environment.
 
 ## [2.0.0]
+### Added
+- joblib 0.10.3 (#11)
+
 ### Changed
 - Moved conda to version 4.3.11 (#11)
 - Moved python to version 3.6.0 (#11)
-- Various package version changes (#11)
-    - boto 2.45.0
-    - cython 0.25.2
-    - jinja2 2.8
-    - joblib 0.10.3
-    - pyyaml 3.12
-    - requests=2.12.4    
-- Moved conda to version 4.2.12 (#8)
+- Various package version changes (#11, #13)
+    - beautifulsoup4 4.5.1 --> 4.5.3
+    - boto 2.43.0 --> 2.45.0
+    - boto3 1.4.2 --> 1.4.3
+    - cython 0.25.1 --> 0.25.2
+    - matplotlib 1.5.3 --> 2.0.0
+    - nltk 3.2.1 --> 3.2.2
+    - numexpr 2.6.1 --> 2.6.2
+    - numpy 1.11.3 --> 1.12.0
+    - pandas 0.19.1 --> 0.19.2
+    - pyyaml 3.11 --> 3.12
+    - requests 2.12.1 --> 2.12.4
+    - statsmodels 0.6.1 --> 0.8.0
 - Moved package install from the `datascience` environment to `root` (#8)
 
 ## [1.1.0] - 2017-02-13
