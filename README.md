@@ -57,6 +57,13 @@ VERSION_MICRO
 VERSION contains the full version string, e.g. "1.0.3". VERSION_MAJOR,
 VERSION_MINOR, and VERSION_MICRO each contain a single integer.
 
+# Creating Equivalent Local Environments
+
+The `environment.yml` file in this repo can be used to create a python environment that is 
+equivalent to the one in the container. **However, you should change the name of the 
+environment in the `environment.yml` file first!** Otherwise, you might stomp on packages in 
+your root environment or get an error.
+
 # Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md) for information about contributing to this project.
