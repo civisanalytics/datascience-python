@@ -42,4 +42,6 @@ dependencies:
   - joblib==0.10.3
   - pysftp==0.2.9
   - python-simple-hipchat==0.4.0
+  - tensorflow==1.0.0
   - urllib3==1.19
+  - xgboost==0.6a2

@@ -11,6 +11,8 @@ Version number changes (major.minor.micro) in this package denote the following:
 ### Added
 - glmnet 1.0.0 (#14)
 - joblib 0.10.3 (#11)
+- tensorflow 1.0.0 (#15)
+- xgboost 0.6a2 (#15)
 
 ### Changed
 - Moved conda to version 4.3.11 (#11)
