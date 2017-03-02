@@ -9,10 +9,13 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## [2.0.0]
 ### Added
-- glmnet 1.0.0 (#14)
+- glmnet 2.0.0 (#16)
 - joblib 0.10.3 (#11)
 - tensorflow 1.0.0 (#15)
 - xgboost 0.6a2 (#15)
+- muffnn 1.0.0 (Civis deep learning library #16)
+- pubnub 4.0.8 (Used by Civis API client v1.3 #16)
+- requests-toolbelt 0.7.1 (Optional for Civis API client v1.3 #16)
 
 ### Changed
 - Moved conda to version 4.3.11 (#11)
@@ -30,6 +33,7 @@ Version number changes (major.minor.micro) in this package denote the following:
     - pyyaml 3.11 --> 3.12
     - requests 2.12.1 --> 2.12.4
     - statsmodels 0.6.1 --> 0.8.0
+- Upgrade `civis` to v1.3 (#16)
 - Moved package install from the `datascience` environment to `root` (#8)
 
 ## [1.1.0] - 2017-02-13
