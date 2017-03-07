@@ -14,9 +14,9 @@ ENV LANG=en_US.UTF-8 \
     CIVIS_CONDA_VERSION=4.3.11 \
     CIVIS_PYTHON_VERSION=3.6.0
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
-  apt-get install -y software-properties-common && \
-  apt-get install -y \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
+  apt-get install -y --no-install-recommends software-properties-common && \
+  apt-get install -y --no-install-recommends \
       make \
       automake \
       libpq-dev \
@@ -31,24 +31,24 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
       ca-certificates \
       curl
 
-# Conda install. 
+# Conda install.
 #
-# Everything is installed in the root environment. This allows for 
-# upgrades to the packages and eliminates the pain of trying to activate 
-# some other environment automatically for the many different ways 
+# Everything is installed in the root environment. This allows for
+# upgrades to the packages and eliminates the pain of trying to activate
+# some other environment automatically for the many different ways
 # people can use a docker image.
 #
-# Things are pinned to prevent upgrades from conda and force it to 
+# Things are pinned to prevent upgrades from conda and force it to
 # resolve dependencies relative to a fixed conda & python version.
 #
-# Note that the python version is also listed in the enviornment.yml 
+# Note that the python version is also listed in the enviornment.yml
 # file. The version in CIVIS_PYTHON_VERSION is the source of truth.
-# If you want to change the python version, you need to change it in 
+# If you want to change the python version, you need to change it in
 # **both** places. The python version has been left in the `environment.yml`
-# file so that people can create environments equivalent to this 
+# file so that people can create environments equivalent to this
 # container. However, change the name of the environment first!
-# 
-# The ordering of these steps seems to matter. You seem to have to 
+#
+# The ordering of these steps seems to matter. You seem to have to
 # install a specific python version by hand and then pin it.
 # 1) install conda
 # 2) pin conda to the version given by CIVIS_CONDA_VERSION
@@ -76,7 +76,8 @@ COPY .condarc /opt/conda/.condarc
 COPY environment.yml environment.yml
 RUN conda install -y boto && \
     conda install -y nomkl && \
-    conda env update -f environment.yml
+    conda env update -f environment.yml && \
+    conda clean --all -y
 
 # We aren't running a GUI, so force matplotlib to use
 # the non-interactive "Agg" backend for graphics.
