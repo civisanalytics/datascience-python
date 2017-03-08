@@ -37,6 +37,9 @@ Version number changes (major.minor.micro) in this package denote the following:
 - Moved package install from the `datascience` environment to `root` (#8)
 - Clean the conda cache and skip recommended package installs to reduce Docker image size (#18)
 
+### Removed
+- nltk 3.2.2 (#20)
+
 ## [1.1.0] - 2017-02-13
 ### Changed
 - Add environment variables which record the image version number (#1)
