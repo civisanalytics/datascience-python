@@ -7,7 +7,15 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A minor version will increase if one or more packages contained in the Docker image add new, backwards-compatible features, or if a new package is added to the Docker image.
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompabile changes in the execution environment.
 
-## [2.0.0]
+## [Unreleased]
+
+
+## [2.0.0] - 2017-03-09
+### API-breaking changes
+- Removed `nltk` package
+- Moved package install environment from "datascience" to the root environment
+- Upgrade `matplotlib` to v2.0.0
+
 ### Added
 - glmnet 2.0.0 (#16)
 - joblib 0.11.0 (#19)
@@ -26,7 +34,6 @@ Version number changes (major.minor.micro) in this package denote the following:
     - boto3 1.4.2 --> 1.4.3
     - cython 0.25.1 --> 0.25.2
     - matplotlib 1.5.3 --> 2.0.0
-    - nltk 3.2.1 --> 3.2.2
     - numexpr 2.6.1 --> 2.6.2
     - numpy 1.11.3 --> 1.12.0
     - pandas 0.19.1 --> 0.19.2
