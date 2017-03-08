@@ -10,7 +10,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 ## [2.0.0]
 ### Added
 - glmnet 2.0.0 (#16)
-- joblib 0.10.3 (#11)
+- joblib 0.11.0 (#19)
 - tensorflow 1.0.0 (#15)
 - xgboost 0.6a2 (#15)
 - muffnn 1.0.0 (Civis deep learning library #16)
@@ -35,6 +35,7 @@ Version number changes (major.minor.micro) in this package denote the following:
     - statsmodels 0.6.1 --> 0.8.0
 - Upgrade `civis` to v1.3 (#16)
 - Moved package install from the `datascience` environment to `root` (#8)
+- Clean the conda cache and skip recommended package installs to reduce Docker image size (#18)
 
 ## [1.1.0] - 2017-02-13
 ### Changed

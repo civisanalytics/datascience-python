@@ -39,7 +39,7 @@ dependencies:
   - dropbox==7.1.1
   - ftputil==3.3.1
   - glmnet==2.0.0
-  - joblib==0.10.3
+  - joblib==0.11.0
   - muffnn==1.0.0
   - pubnub==4.0.8
   - pysftp==0.2.9
