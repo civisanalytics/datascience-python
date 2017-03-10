@@ -11,9 +11,8 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 
 ## [2.0.1] - 2017-03-10
-### Changed
-- Various package version changes (#22)
-    - awscli 1.11.27 --> 1.11.60
+### Fixed
+- Update `awscli` to prevent pip conflict with `botocore`: awscli 1.11.27 --> 1.11.60 (#22)
 
 ## [2.0.0] - 2017-03-09
 ### API-breaking changes
