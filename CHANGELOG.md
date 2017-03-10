@@ -8,9 +8,11 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompabile changes in the execution environment.
 
 ## [Unreleased]
-### Changed
-- Various package version changes (#22)
-    - awscli 1.11.27 --> 1.11.60 
+
+
+## [2.0.1] - 2017-03-10
+### Fixed
+- Update `awscli` to prevent pip conflict with `botocore`: awscli 1.11.27 --> 1.11.60 (#22)
 
 ## [2.0.0] - 2017-03-09
 ### API-breaking changes
