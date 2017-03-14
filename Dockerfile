@@ -13,11 +13,6 @@ RUN apt-get purge -y python.*
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
 ENV LANG=C.UTF-8 \
     BASH_ENV=/etc/profile
-# Set environment variables for UTF-8, conda, and shell environments
-#ENV LANG=en_US.UTF-8 \
-#    LANGUAGE=en_US:en \
-#    LC_ALL=en_US.UTF-8 \
-#    BASH_ENV=/etc/profile
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
