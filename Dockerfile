@@ -43,6 +43,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         g++ \
         gfortran \
         libpq-dev \
+        postgresql \
+        postgresql-contrib \
     && rm -rf /var/lib/apt/lists/*
 
 ENV GPG_KEY 0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D
@@ -83,6 +85,7 @@ RUN set -ex \
     && ./configure \
         --enable-loadable-sqlite-extensions \
         --enable-shared \
+        --with-lto \
     && make -j$(nproc) \
     && make install \
     && ldconfig \
