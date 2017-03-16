@@ -45,7 +45,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libpq-dev \
         postgresql \
         postgresql-contrib \
-        postgresql-server-dev \
+        postgresql-server-dev-9.3 \
+        libc6-dev \
+        libssl-dev \
+        zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
 ENV GPG_KEY 0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D
@@ -58,17 +61,14 @@ RUN set -ex \
     && buildDeps=' \
         libffi-dev \
         libbz2-dev \
-        libc6-dev \
         libgdbm-dev \
         liblzma-dev \
         libncurses-dev \
         libreadline-dev \
         libsqlite3-dev \
-        libssl-dev \
         tcl-dev \
         tk-dev \
         xz-utils \
-        zlib1g-dev \
     ' \
     && apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
     \
