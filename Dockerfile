@@ -81,8 +81,8 @@ RUN set -ex \
 	&& cd /usr/src/python \
 	&& ./configure \
 		--enable-loadable-sqlite-extensions \
-		--enable-shared
-        --enable-optimization \
+		--enable-shared \
+        --enable-optimizations \
 	&& make -j$(nproc) \
 	&& make install \
 	&& ldconfig \
