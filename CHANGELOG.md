@@ -9,6 +9,9 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## [Unreleased]
 
+## [2.1.0] - 2017-03-17
+### Changed
+- Upgrade `civis` to v1.4.0 (#25)
 
 ## [2.0.1] - 2017-03-10
 ### Fixed
