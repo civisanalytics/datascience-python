@@ -14,3 +14,4 @@ test:
         - docker run civisanalytics/datascience-python python -c "import seaborn"
         - docker run -t civisanalytics/datascience-python /bin/bash -c "python -c 'import numpy'"
         - docker run civisanalytics/datascience-python python -c "from numpy.distutils import system_info; assert system_info.get_info('mkl') == {}"
+        - docker run civisanalytics/datascience-python python -c "import numpy; numpy.test()"
