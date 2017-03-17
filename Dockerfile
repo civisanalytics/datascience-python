@@ -92,7 +92,7 @@ RUN mkdir -p ${HOME}/.config/matplotlib && \
     echo "backend      : Agg" > ${HOME}/.config/matplotlib/matplotlibrc && \
     python -c "import matplotlib.pyplot"
 
-ENV VERSION=2.0.2 \
+ENV VERSION=2.0.1 \
     VERSION_MAJOR=2 \
     VERSION_MINOR=0 \
     VERSION_MICRO=1
