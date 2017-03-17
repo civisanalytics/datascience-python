@@ -48,7 +48,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
 # If you want to change the python version, you need to change it in
 # **both** places. The python version has been left in the `environment.yml`
 # file so that people can create environments equivalent to this
-# container. However, change the name of the environment first!
+# container.
 #
 # The ordering of these steps seems to matter. You seem to have to
 # install a specific python version by hand and then pin it.
