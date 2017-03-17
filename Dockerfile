@@ -28,7 +28,8 @@ MAINTAINER support@civisanalytics.com
 ENV BASH_ENV=/etc/profile \
     PATH=/opt/conda/bin:/usr/local/bin:$PATH \
     CIVIS_CONDA_VERSION=4.3.11 \
-    PYTHON_VERSION=3.6.0
+    PYTHON_VERSION=3.6.0 \
+    CONDARC=/opt/conda/.condarc
 
 # http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
@@ -124,6 +125,7 @@ RUN cd /usr/local/bin \
     && ln -s python3 python \
     && ln -s python3-config python-config
 
+# A simple miniconda install for those who want it...
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     wget --quiet https://repo.continuum.io/miniconda/Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh && \
     /bin/bash /Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh -b -p /opt/conda && \
@@ -132,13 +134,7 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     echo "conda ==${CIVIS_CONDA_VERSION}" > /opt/conda/conda-meta/pinned && \
     conda install -y nomkl && \
     conda clean --all -y
-
-# Red Hat and Debian use different names for this file. git2R wants the latter.
-# See conda-recipes GH 423
-RUN ln -s /opt/conda/lib/libopenblas.so /opt/conda/lib/libblas.so && \
-    ln -s /opt/conda/lib/libopenblas.so /opt/conda/lib/liblapack.so && \
-    ln -s /opt/conda/lib/libssl.so /opt/conda/lib/libssl.so.6 && \
-    ln -s /opt/conda/lib/libcrypto.so /opt/conda/lib/libcrypto.so.6
+COPY .condarc /opt/conda/.condarc
 
 # Now install the dependencies from the requirements file.
 COPY requirements.txt /requirements.txt
