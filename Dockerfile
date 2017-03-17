@@ -26,17 +26,20 @@ MAINTAINER support@civisanalytics.com
 
 # ensure local python is preferred over distribution python
 ENV BASH_ENV=/etc/profile \
-    PATH=/usr/local/bin:$PATH
+    PATH=/opt/conda/bin:/usr/local/bin:$PATH \
+    CIVIS_CONDA_VERSION=4.3.11 \
+    PYTHON_VERSION=3.6.0
 
 # http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
 ENV LANG C.UTF-8
 
 # runtime dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y --no-install-recommends \
         libgdbm3 \
         libsqlite3-0 \
         libssl1.0.0 \
+        git \
         make \
         automake \
         gcc \
@@ -52,12 +55,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 ENV GPG_KEY 0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D
-ENV PYTHON_VERSION 3.6.0
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 9.0.1
 
-RUN set -ex \
+RUN DEBIAN_FRONTEND=noninteractive set -ex \
     && buildDeps=' \
         libffi-dev \
         libbz2-dev \
@@ -121,6 +123,22 @@ RUN cd /usr/local/bin \
     && ln -s pydoc3 pydoc \
     && ln -s python3 python \
     && ln -s python3-config python-config
+
+RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
+    wget --quiet https://repo.continuum.io/miniconda/Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh && \
+    /bin/bash /Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh -b -p /opt/conda && \
+    rm Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh && \
+    /opt/conda/bin/conda install --yes conda==${CIVIS_CONDA_VERSION} && \
+    echo "conda ==${CIVIS_CONDA_VERSION}" > /opt/conda/conda-meta/pinned && \
+    conda install -y nomkl && \
+    conda clean --all -y
+
+# Red Hat and Debian use different names for this file. git2R wants the latter.
+# See conda-recipes GH 423
+RUN ln -s /opt/conda/lib/libopenblas.so /opt/conda/lib/libblas.so && \
+    ln -s /opt/conda/lib/libopenblas.so /opt/conda/lib/liblapack.so && \
+    ln -s /opt/conda/lib/libssl.so /opt/conda/lib/libssl.so.6 && \
+    ln -s /opt/conda/lib/libcrypto.so /opt/conda/lib/libcrypto.so.6
 
 # Now install the dependencies from the requirements file.
 COPY requirements.txt /requirements.txt
