@@ -95,4 +95,4 @@ RUN mkdir -p ${HOME}/.config/matplotlib && \
 ENV VERSION=2.0.2 \
     VERSION_MAJOR=2 \
     VERSION_MINOR=0 \
-    VERSION_MICRO=2
+    VERSION_MICRO=1
