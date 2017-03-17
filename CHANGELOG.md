@@ -7,11 +7,13 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A minor version will increase if one or more packages contained in the Docker image add new, backwards-compatible features, or if a new package is added to the Docker image.
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompabile changes in the execution environment.
 
-## [Unreleased]
-
 ## [2.1.0] - 2017-03-17
 ### Changed
 - Upgrade `civis` to v1.4.0 (#25)
+- Changed name of environment in `environment.yml` file to `datascience` (but conda install is still `root`). (#26)
+- Removed a few Docker layers. (#26)
+- Cleared more of the `apt-get`, `pip` and `conda` caches. (#26)
+- Added a test of the `numpy` install. (#26)
 
 ## [2.0.1] - 2017-03-10
 ### Fixed
