@@ -7,6 +7,11 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A minor version will increase if one or more packages contained in the Docker image add new, backwards-compatible features, or if a new package is added to the Docker image.
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompabile changes in the execution environment.
 
+## Unreleased
+### Removed
+- Remove pinned conda installs of `libgcc` and `libsodium`. This prevented use of the environment file in OS X, and they are dependencies automatically installed by conda in the Docker image build.
+
+
 ## [2.1.0] - 2017-03-17
 ### Changed
 - Upgrade `civis` to v1.4.0 (#25)
