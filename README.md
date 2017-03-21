@@ -61,6 +61,14 @@ VERSION_MINOR, and VERSION_MICRO each contain a single integer.
 
 The `environment.yml` file in this repo can be used to create a python environment that is
 equivalent to the one in the container. This environment will be named `datascience`.
+The environment installs in Ubuntu Linux (this is the OS of the Dockerfile).
+It will install in OS X, but the `xgboost` install requires either
+the `gcc` v5 or the `clang-omp` compiler, neither of which are natively provided in OS X.
+If you wish to set up this environment in OS X, you may either
+- Remove `xgboost` from the `environment.yml` file before using it to create the environment
+- Use [Homebrew](https://brew.sh/) to install `gcc-5`. You can do that via
+`brew install gcc@5 --without-multilib`. Be warned that this installation will take
+a long time.
 
 # Contributing
 
