@@ -12,7 +12,7 @@ ENV LANG=en_US.UTF-8 \
     BASH_ENV=/etc/profile \
     PATH=/opt/conda/bin:$PATH \
     CIVIS_CONDA_VERSION=4.3.11 \
-    CIVIS_PYTHON_VERSION=3.6.0
+    CIVIS_PYTHON_VERSION=3.6.1
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
   apt-get install -y --no-install-recommends software-properties-common && \
@@ -92,7 +92,7 @@ RUN mkdir -p ${HOME}/.config/matplotlib && \
     echo "backend      : Agg" > ${HOME}/.config/matplotlib/matplotlibrc && \
     python -c "import matplotlib.pyplot"
 
-ENV VERSION=2.1.0 \
+ENV VERSION=2.2.0 \
     VERSION_MAJOR=2 \
-    VERSION_MINOR=1 \
+    VERSION_MINOR=2 \
     VERSION_MICRO=0
