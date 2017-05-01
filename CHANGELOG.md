@@ -14,8 +14,12 @@ Version number changes (major.minor.micro) in this package denote the following:
 ### Removed
 - Remove pinned conda installs of `libgcc` and `libsodium`. This prevented use of the environment file in OS X, and they are dependencies automatically installed by conda in the Docker image build.
 
+### Additions
+- Explicitly added `botocore` v1.5.38. We had `botocore` installed before (it's a dependency of other AWS libraries), but we're now explicitly including the version number.
+
 ### Package updates
 - python 3.6.0 -> 3.6.1
+- awscli 1.11.60 -> 1.11.75
 - boto 2.45.0 -> 2.46.1
 - boto3 1.4.3 -> 1.4.4
 - numpy 1.12.0 -> 1.12.1
