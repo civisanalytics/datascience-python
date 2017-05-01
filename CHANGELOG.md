@@ -8,9 +8,26 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompabile changes in the execution environment.
 
 ## Unreleased
+
+
+## [2.2.0] - 2017-05-02
 ### Removed
 - Remove pinned conda installs of `libgcc` and `libsodium`. This prevented use of the environment file in OS X, and they are dependencies automatically installed by conda in the Docker image build.
 
+### Additions
+- Explicitly added `botocore` v1.5.38. We had `botocore` installed before (it's a dependency of other AWS libraries), but we're now explicitly including the version number.
+
+### Package updates
+- python 3.6.0 -> 3.6.1
+- awscli 1.11.60 -> 1.11.75
+- boto 2.45.0 -> 2.46.1
+- boto3 1.4.3 -> 1.4.4
+- numpy 1.12.0 -> 1.12.1
+- pubnub 4.0.8 -> 4.0.10
+- requests 2.12.4 -> 2.13.0
+- scipy 0.18.1 -> 0.19.0
+- muffnn 1.0.0 -> 1.1.1
+- tensorflow 1.0.0 -> 1.1.0
 
 ## [2.1.0] - 2017-03-17
 ### Changed
