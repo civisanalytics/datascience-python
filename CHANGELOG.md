@@ -9,6 +9,12 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+### Package updates
+- civis 1.4.0 -> 1.5.0
+- ipython 5.1.0 -> 6.0.0
+- matplotlib 2.0.0 -> 2.0.2
+- pandas 0.19.2 -> 0.20.1
+- requests 2.13.0 -> 2.14.2
 
 ## [2.2.0] - 2017-05-02
 ### Removed
