@@ -9,6 +9,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [3.0.0] - 2017-05-16
 ### Package updates
 - civis 1.4.0 -> 1.5.0
 - ipython 5.1.0 -> 6.0.0
