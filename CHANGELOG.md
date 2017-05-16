@@ -11,7 +11,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## [3.0.0] - 2017-05-16
 ### Package updates
-- civis 1.4.0 -> 1.5.0
+- civis 1.4.0 -> 1.5.1
 - ipython 5.1.0 -> 6.0.0
 - matplotlib 2.0.0 -> 2.0.2
 - pandas 0.19.2 -> 0.20.1
