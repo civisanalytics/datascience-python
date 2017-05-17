@@ -8,6 +8,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompabile changes in the execution environment.
 
 ## Unreleased
+
 ## [3.0.0] - 2017-05-17
 ### Package updates
 - civis 1.4.0 -> 1.5.2
