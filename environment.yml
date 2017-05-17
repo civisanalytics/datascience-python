@@ -33,7 +33,7 @@ dependencies:
 - statsmodels=0.8.0
 - pip:
   - awscli==1.11.75
-  - civis==1.5.1
+  - civis==1.5.2
   - dropbox==7.1.1
   - ftputil==3.3.1
   - glmnet==2.0.0
