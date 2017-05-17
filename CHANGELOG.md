@@ -8,12 +8,9 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompabile changes in the execution environment.
 
 ## Unreleased
+## [3.0.0] - 2017-05-17
 ### Package updates
-- civis 1.5.1 -> 1.5.2
-
-## [3.0.0] - 2017-05-16
-### Package updates
-- civis 1.4.0 -> 1.5.1
+- civis 1.4.0 -> 1.5.2
 - ipython 5.1.0 -> 6.0.0
 - matplotlib 2.0.0 -> 2.0.2
 - pandas 0.19.2 -> 0.20.1
