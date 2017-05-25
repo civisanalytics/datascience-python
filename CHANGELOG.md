@@ -9,7 +9,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
-## [3.0.1] - XXXX-XX-XX
+## [3.0.1] - 2017-05-25
 ### Package Updates
 - muffnn 1.1.1 -> 1.1.2
 
