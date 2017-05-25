@@ -9,6 +9,10 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [3.0.1] - 2017-05-25
+### Package Updates
+- muffnn 1.1.1 -> 1.1.2
+
 ## [3.0.0] - 2017-05-17
 ### Package updates
 - civis 1.4.0 -> 1.5.2
