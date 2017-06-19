@@ -9,6 +9,10 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+### Fixes
+- Use /tmp for joblib temporary files instead of /shm
+
+
 ## [3.0.1] - 2017-05-25
 ### Package Updates
 - muffnn 1.1.1 -> 1.1.2
