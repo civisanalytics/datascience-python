@@ -57,6 +57,15 @@ VERSION_MICRO
 VERSION contains the full version string, e.g. "1.0.3". VERSION_MAJOR,
 VERSION_MINOR, and VERSION_MICRO each contain a single integer.
 
+## Joblib Temporary Files
+
+The [`joblib`](https://pythonhosted.org/joblib/) library enhances multiprocessing
+capabilities for scientific Python computing. In particular, the `scikit-learn`
+library uses `joblib` for parallelization. This Docker image sets `joblib`'s
+default location for staging temporary files to the /tmp directory.
+The normal default is /shm. /shm is a RAM disk which defaults to a 64 MB size
+in Docker containers, too small for typical scientific computing.
+
 # Creating Equivalent Local Environments
 
 The `environment.yml` file in this repo can be used to create a python environment that is

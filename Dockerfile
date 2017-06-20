@@ -92,6 +92,12 @@ RUN mkdir -p ${HOME}/.config/matplotlib && \
     echo "backend      : Agg" > ${HOME}/.config/matplotlib/matplotlibrc && \
     python -c "import matplotlib.pyplot"
 
+# Instruct joblib to use disk for temporary files. Joblib defaults to
+# /shm when that directory is present. In the Docker container, /shm is
+# present but defaults to 64 MB.
+# https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
+ENV JOBLIB_TEMP_FOLDER=/tmp
+
 ENV VERSION=3.0.1 \
     VERSION_MAJOR=3 \
     VERSION_MINOR=0 \
