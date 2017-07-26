@@ -9,6 +9,31 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+### New packages
+- cloudpickle 0.3.1
+- pyarrow 0.5.0 (from conda-forge)
+
+### Python
+- Update from v3.6.1 to v3.6.2
+
+### Package Updates
+- civis 1.5.2 -> 1.6.0
+- cython 0.25.2 -> 0.26
+- ipython 6.0.0 -> 6.1.0
+- jinja2 2.8 -> 2.9.6
+- numpy 1.12.1 -> 1.13.1
+- pandas 0.20.1 -> 0.20.3
+- pytest 3.0.5 -> 3.1.3
+- seaborn 0.7.1 -> 0.8
+- scipy 0.19.0 -> 0.19.1
+- scikit-learn 0.18.1 -> 0.18.2
+- pubnub 4.0.10 -> 4.0.12
+- requests-toolbelt 0.7.1 -> 0.8.0
+- tensorflow 1.1.0 -> 1.2.1
+
+### Changed
+- Install xgboost from conda-forge instead of from PyPI
+
 ### Fixes
 - Use /tmp for joblib temporary files instead of /shm
 
