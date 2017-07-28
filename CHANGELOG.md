@@ -9,6 +9,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [3.1.0] - 2017-07-31
 ### New packages
 - cloudpickle 0.3.1
 - pyarrow 0.5.0 (from conda-forge)
