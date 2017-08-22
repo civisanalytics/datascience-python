@@ -10,6 +10,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 ## Unreleased
 ### Package Updates
 - scikit-learn 0.18.2 -> 0.19.0
+- civis-python 1.6.0 -> 1.6.1
 
 ## [3.1.0] - 2017-07-31
 ### New packages
