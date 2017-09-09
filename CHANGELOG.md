@@ -12,6 +12,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 - scikit-learn 0.18.2 -> 0.19.0
 - civis 1.6.0 -> 1.6.2
 - requests 2.14.2 -> 2.18.4
+- urllib3 1.19 -> 1.22
 
 ## [3.1.0] - 2017-07-31
 ### New packages
