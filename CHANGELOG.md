@@ -8,6 +8,9 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompatible changes in the execution environment.
 
 ## Unreleased
+
+
+## [3.2.0] - 2017-09-11
 ### Package Updates
 - scikit-learn 0.18.2 -> 0.19.0
 - civis 1.6.0 -> 1.6.2
