@@ -5,12 +5,14 @@ All changes to this project will be documented in this file.
 Version number changes (major.minor.micro) in this package denote the following:
 - A micro version will increase if the only change in a release is incrementing micro versions (bugfix-only releases) on the packages contained in this image.
 - A minor version will increase if one or more packages contained in the Docker image add new, backwards-compatible features, or if a new package is added to the Docker image.
-- A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompabile changes in the execution environment.
+- A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompatible changes in the execution environment.
 
 ## Unreleased
 ### Package Updates
 - scikit-learn 0.18.2 -> 0.19.0
 - civis 1.6.0 -> 1.6.2
+- requests 2.14.2 -> 2.18.4
+- urllib3 1.19 -> 1.22
 
 ## [3.1.0] - 2017-07-31
 ### New packages
