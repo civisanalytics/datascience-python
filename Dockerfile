@@ -98,7 +98,7 @@ RUN mkdir -p ${HOME}/.config/matplotlib && \
 # https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
 ENV JOBLIB_TEMP_FOLDER=/tmp
 
-ENV VERSION=3.1.0 \
+ENV VERSION=3.2.0 \
     VERSION_MAJOR=3 \
-    VERSION_MINOR=1 \
+    VERSION_MINOR=2 \
     VERSION_MICRO=0
