@@ -8,7 +8,8 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompatible changes in the execution environment.
 
 ## Unreleased
-
+### New packages
+- civisml-extensions 0.1.1
 
 ## [3.2.0] - 2017-09-11
 ### Package Updates
