@@ -8,8 +8,26 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompatible changes in the execution environment.
 
 ## Unreleased
+
 ### New packages
 - civisml-extensions 0.1.1
+- dask 0.15.4
+- s3fs 0.1.2
+
+### Changed
+- Moved conda to version 4.3.30
+
+### Package Updates
+- boto3 1.4.4 -> 1.4.5
+- matplotlib 2.0.2 -> 2.1.0
+- numpy 1.13.1 -> 1.13.3
+- pandas 0.20.3 -> 0.21.0
+- pyarrow 0.5.0 -> 0.7.1
+- scikit-learn 0.19.0 -> 0.19.1
+- cloudpickle 0.3.1 -> 0.5.1
+- muffnn 1.1.2 -> 1.2.0
+- pubnub 4.0.12 -> 4.0.13
+- tensorflow 1.2.1 -> 1.4.0
 
 ## [3.2.0] - 2017-09-11
 ### Package Updates
