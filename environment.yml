@@ -31,6 +31,7 @@ dependencies:
 - python=3.6.2
 - pyyaml=3.12
 - requests=2.18.4
+- s3fs=0.1.2
 - seaborn=0.8
 - scipy=0.19.1
 - scikit-learn=0.19.1
@@ -41,6 +42,7 @@ dependencies:
   - civis==1.6.2
   - civisml-extensions==0.1.1
   - cloudpickle==0.5.1
+  - dask==0.15.4
   - dropbox==7.1.1
   - ftputil==3.3.1
   - glmnet==2.0.0
