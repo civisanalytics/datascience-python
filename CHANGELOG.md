@@ -13,7 +13,6 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ### New packages
 - civisml-extensions 0.1.5
-- civisml-extensions 0.1.1
 - dask 0.15.4
 - s3fs 0.1.2
 
