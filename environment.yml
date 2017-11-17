@@ -39,8 +39,8 @@ dependencies:
 - xgboost=0.6a2
 - pip:
   - awscli==1.11.75
-  - civis==1.6.2
-  - civisml-extensions==0.1.1
+  - civis==1.7.1
+  - civisml-extensions==0.1.5
   - cloudpickle==0.5.1
   - dask==0.15.4
   - dropbox==7.1.1
