@@ -9,11 +9,11 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 ### New packages
-- bqplot 0.10.1
+- bqplot 0.10.2
 
 ### Package Updates
-- ipywidgets 7.0.0 -> 7.0.5
-- notebook 5.2.0 -> 5.2.1
+- ipywidgets 7.0.0 -> 7.1.0
+- notebook 5.2.0 -> 5.2.2
 
 ### Fixed
 - Enabled widgetsnbextension so that ipywidgets works.
