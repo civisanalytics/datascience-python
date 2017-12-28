@@ -16,4 +16,4 @@ test:
         - docker run civisanalytics/datascience-python python -c "from numpy.distutils import system_info; assert system_info.get_info('mkl') == {}"
         - docker run civisanalytics/datascience-python python -c "import numpy; numpy.test()"
         - docker run civisanalytics/datascience-python /bin/bash -c "conda list|grep conda-forge"
-        - docker run civisanalytics/datascience-python /bin/bash -c "conda list|grep -c conda-forge|python -c \"import sys; actual_count = int(sys.stdin.readlines()[0]); expected_count = 8; assert actual_count == expected_count, 'There should be %d conda-forge packages, but there are actually %d.' % (expected_count, actual_count)\""
+        - docker run civisanalytics/datascience-python /bin/bash -c "conda list|grep -c conda-forge|python -c \"import sys; actual_count = int(sys.stdin.readlines()[0]); expected_count = 10; assert actual_count == expected_count, 'There should be %d conda-forge packages, but there are actually %d.' % (expected_count, actual_count)\""
