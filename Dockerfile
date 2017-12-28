@@ -92,6 +92,13 @@ RUN mkdir -p ${HOME}/.config/matplotlib && \
     echo "backend      : Agg" > ${HOME}/.config/matplotlib/matplotlibrc && \
     python -c "import matplotlib.pyplot"
 
+# Enable widgetsnbextension for jupyter widgets.
+# See https://ipywidgets.readthedocs.io/en/stable/user_install.html.
+# This enables the extension in the conda environment. The conda-forge version
+# does this upon installation, but the default channel version doesn't seem to,
+# so we'll run this (again) just in case.
+RUN jupyter nbextension enable --py widgetsnbextension
+
 # Instruct joblib to use disk for temporary files. Joblib defaults to
 # /shm when that directory is present. In the Docker container, /shm is
 # present but defaults to 64 MB.

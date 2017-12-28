@@ -7,6 +7,17 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A minor version will increase if one or more packages contained in the Docker image add new, backwards-compatible features, or if a new package is added to the Docker image.
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompatible changes in the execution environment.
 
+## Unreleased
+### New packages
+- bqplot 0.10.2
+
+### Package Updates
+- ipywidgets 7.0.0 -> 7.1.0
+- notebook 5.2.0 -> 5.2.2
+
+### Fixed
+- Enabled widgetsnbextension so that ipywidgets works.
+
 ## [3.3.0] - 2017-11-17
 ### Package Updates
 - civis 1.6.2 -> 1.7.1
