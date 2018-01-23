@@ -109,6 +109,7 @@ ENV JOBLIB_TEMP_FOLDER=/tmp
 # This should be removed when it's no longer needed.
 # As of container version 4.0.0, it filters a tensorflow warning
 # which should go away with tensorflow v1.5.
+COPY warningsfilter.py warningsfilter.py
 ENV PYTHONSTARTUP=warningsfilter.py
 
 ENV VERSION=4.0.0 \
