@@ -106,6 +106,9 @@ RUN jupyter nbextension enable --py widgetsnbextension
 ENV JOBLIB_TEMP_FOLDER=/tmp
 
 # Filter out know irrelevant warnings.
+# This should be removed when it's no longer needed.
+# As of container version 4.0.0, it filters a tensorflow warning
+# which should go away with tensorflow v1.5.
 ENV PYTHONSTARTUP=warningsfilter.py
 
 ENV VERSION=4.0.0 \
