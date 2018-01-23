@@ -105,7 +105,9 @@ RUN jupyter nbextension enable --py widgetsnbextension
 # https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
 ENV JOBLIB_TEMP_FOLDER=/tmp
 
+# Filter out know irrelevant warnings.
+ENV PYTHONSTARTUP=warningsfilter.py
+
 ENV VERSION=4.0.0 \
     VERSION_MAJOR=4 \
     VERSION_MINOR=0 \
-    VERSION_MICRO=0

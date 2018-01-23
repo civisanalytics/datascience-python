@@ -36,6 +36,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ### Fixed
 - Enabled widgetsnbextension so that ipywidgets works.
+- Suppress irrelevant warning from tensorflow v1.4
 
 ## [3.3.0] - 2017-11-17
 ### Package Updates
