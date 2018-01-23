@@ -8,10 +8,29 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompatible changes in the execution environment.
 
 ## Unreleased
+
+## [4.0.0] - 2018-01-23
 ### New packages
 - bqplot 0.10.2
+- feather-format 0.4.0
+
+### Changed
+- Updated Python version from 3.6.2 to 3.6.4.
 
 ### Package Updates
+- civis 1.7.1 -> 1.8.0
+- civisml-extensions 0.1.5 -> 0.1.6
+- muffnn 1.2.0 -> 2.0.0
+- cloudpickle 0.5.1 -> 0.5.2
+- dask 0.15.4 -> 0.16.1
+- ftputil 3.3.1 -> 3.4
+- tensorflow 1.4.0 -> 1.4.1
+- boto3 1.4.5 -> 1.5.11
+- cython 0.26 -> 0.27.3
+- openblas 0.2.19 -> 0.2.20
+- pandas 0.21.0 -> 0.22.0
+- pyarrow 0.7.1 -> 0.8.0
+- scipy 0.19.1 -> 1.0.0
 - ipywidgets 7.0.0 -> 7.1.0
 - notebook 5.2.0 -> 5.2.2
 
