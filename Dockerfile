@@ -105,8 +105,8 @@ RUN jupyter nbextension enable --py widgetsnbextension
 # https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
 ENV JOBLIB_TEMP_FOLDER=/tmp
 
-# Filter out know irrelevant warnings.
-# This should be removed when it's no longer needed.
+# Filter out irrelevant warnings.
+# This section should be removed when it's no longer needed.
 # As of container version 4.0.0, it filters a tensorflow warning
 # which should go away with tensorflow v1.5.
 RUN mkdir -p /root/.local/lib/python3.6/site-packages
