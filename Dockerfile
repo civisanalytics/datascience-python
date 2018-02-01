@@ -112,7 +112,7 @@ ENV JOBLIB_TEMP_FOLDER=/tmp
 RUN mkdir -p /root/.local/lib/python3.6/site-packages
 COPY warningsfilter.py /root/.local/lib/python3.6/site-packages/usercustomize.py
 
-ENV VERSION=4.0.0 \
+ENV VERSION=4.0.1 \
     VERSION_MAJOR=4 \
     VERSION_MINOR=0 \
-    VERSION_MICRO=0
+    VERSION_MICRO=1

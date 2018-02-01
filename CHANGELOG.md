@@ -9,6 +9,10 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [4.0.1] - 2018-02-01
+### Package Updates
+- civis 1.8.0 -> 1.8.1
+
 ## [4.0.0] - 2018-01-23
 ### New packages
 - bqplot 0.10.2
