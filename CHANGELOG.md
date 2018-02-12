@@ -9,6 +9,10 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+### Fixed
+- Hardcode links in the README so that they work on DockerHub.
+  Add a release checklist so that maintainers remember to update the links.
+
 ## [4.0.1] - 2018-02-01
 ### Package Updates
 - civis 1.8.0 -> 1.8.1

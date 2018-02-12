@@ -33,7 +33,7 @@ to retrieve a reproducible environment.
 
 Inside the datascience-python Docker image, Python packages are installed in the `root`
 environment. For a full list of included Python libraries, see the
-[environment.yml](environment.yml) file.
+[environment.yml](https://github.com/civisanalytics/datascience-python/blob/v4.0.1/environment.yml) file.
 
 To start a Docker container from the datascience-python image and
 interact with it from a bash prompt, use
@@ -81,13 +81,15 @@ a long time.
 
 # Contributing
 
-See [CONTRIBUTING](CONTRIBUTING.md) for information about contributing to this project.
+See [CONTRIBUTING](https://github.com/civisanalytics/datascience-python/blob/v4.0.1/CONTRIBUTING.md)
+for information about contributing to this project.
 
 If you make any changes, be sure to build a container to verify that it successfully completes:
 ```bash
 docker build -t datascience-python:test .
 ```
-and describe any changes in the [change log](CHANGELOG.md).
+and describe any changes in the
+[change log](https://github.com/civisanalytics/datascience-python/blob/v4.0.1/CHANGELOG.md).
 
 ## For Maintainers
 
@@ -100,8 +102,16 @@ The title of the release should be the same as the tag. Include a change log in 
 Once the release is tagged, DockerHub will automatically build three identical containers, with labels
 "major", "major.minor", and "major.minor.micro".
 
+## Release Checklist
+- Update version number in the environment variables at the bottom of the Dockerfile.
+- Update links in the README so that they point to the (soon-to-be released) latest version.
+- Put the new version number and release date in the CHANGELOG.
+- Add bugfixes (and possibly other updates, if the datascience-python release is > micro) for any packages in the environment.
+- Use GitHub to create a new release. Include the CHANGELOG in the release notes.
+- Verify that the container has built properly on DockerHub.
+
 # License
 
 BSD-3
 
-See [LICENSE.md](LICENSE.md) for details.
+See [LICENSE.md](https://github.com/civisanalytics/datascience-python/blob/v4.0.1/LICENSE.md) for details.
