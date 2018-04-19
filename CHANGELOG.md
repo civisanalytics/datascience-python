@@ -13,6 +13,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 - Added a link in the README directing users who may be reading documentation on DockerHub to instead go to GitHub (#56).
 
 ### Package Updates
+- awscli 1.11.75 (from pip) -> 1.15.4 (from conda)
 - botocore 1.5.38 -> 1.10.4
 - boto3 1.5.11 -> 1.7.4
 
