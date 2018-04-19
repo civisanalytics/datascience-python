@@ -3,10 +3,11 @@ channels:
 - defaults
 - conda-forge
 dependencies:
+- awscli=1.15.4
 - beautifulsoup4=4.5.3
-- botocore=1.5.38
+- botocore=1.10.4
 - boto=2.46.1
-- boto3==1.5.11
+- boto3=1.7.4
 - bqplot=0.10.2
 - cython=0.27.3
 - feather-format=0.4.0
@@ -42,7 +43,6 @@ dependencies:
 - statsmodels=0.8.0
 - xgboost=0.6a2
 - pip:
-  - awscli==1.11.75
   - civis==1.8.1
   - civisml-extensions==0.1.6
   - cloudpickle==0.5.2
