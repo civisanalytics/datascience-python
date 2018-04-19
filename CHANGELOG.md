@@ -9,6 +9,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [4.1.0] - 2018-04-19
 ### Added
 - Added a link in the README directing users who may be reading documentation on DockerHub to instead go to GitHub (#56).
 
