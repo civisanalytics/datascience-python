@@ -9,6 +9,21 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+
+## [4.2.0] - 2018-04-26
+### Package Updates
+- civis 1.8.1 -> 1.9.0
+- civisml-extensions 0.1.6 -> 0.1.8
+- muffnn 2.0.0 -> 2.1.0
+
+- dask 0.15.4 (pip) -> 0.17.2 (conda)
+- tensorflow 1.4.1 -> 1.7.0
+- ipython 6.1.0 -> 6.3.1
+- matplotlib 2.1.0 -> 2.2.2
+- notebook 5.2.2 -> 5.4.1
+- scipy 1.0.0 -> 1.0.1
+- urllib3 1.22 (pip) -> 1.22 (conda)
+
 ## [4.1.0] - 2018-04-19
 ### Added
 - Added a link in the README directing users who may be reading documentation on DockerHub to instead go to GitHub (#56).
