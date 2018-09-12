@@ -9,6 +9,8 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+### Maintenance
+- Update CircleCI config to v2 (#62).
 
 ## [4.2.0] - 2018-04-26
 ### Package Updates
