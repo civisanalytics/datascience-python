@@ -23,7 +23,6 @@ Version number changes (major.minor.micro) in this package denote the following:
 - ipywidgets 7.1.0 -> 7.4.2
 - jinja2 2.9.6 -> 2.10
 - jsonschema 2.5.1 -> 2.6.0
-- libgfortran 3.0.0 -> 3.0.1
 - libtiff 4.0.6 -> 4.0.10
 - libxml2 2.9.2 -> 2.9.8
 - matplotlib 2.2.2 -> 2.2.3

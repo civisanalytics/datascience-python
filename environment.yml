@@ -18,7 +18,7 @@ dependencies:
 - jsonschema=2.6.0
 - jupyter=1.0.0
 - libffi=3.2.1
-- libgfortran=3.0.1
+- libgfortran=3.0.0
 - libtiff=4.0.10
 - libxml2=2.9.8
 - matplotlib=2.2.3
