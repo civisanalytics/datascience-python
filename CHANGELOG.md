@@ -28,7 +28,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 - matplotlib 2.2.2 -> 2.2.3
 - notebook 5.4.1 -> 5.7.4
 - numexpr 2.6.2 -> 2.6.9
-- numpy 1.13.3 -> 1.16.1
+- numpy 1.13.3 -> 1.14.6
 - openblas 0.2.20 -> 0.3.3
 - pandas 0.22.0 -> 0.24.1
 - patsy 0.4.1 -> 0.5.1
