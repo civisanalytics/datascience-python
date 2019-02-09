@@ -11,7 +11,7 @@ ENV LANG=en_US.UTF-8 \
     CONDARC=/opt/conda/.condarc \
     BASH_ENV=/etc/profile \
     PATH=/opt/conda/bin:$PATH \
-    CIVIS_CONDA_VERSION=4.3.30 \
+    CIVIS_CONDA_VERSION=4.5.11 \
     CIVIS_PYTHON_VERSION=3.7.1
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
@@ -61,7 +61,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
 #   Red Hat and Debian use different names for this file. git2R wants the latter.
 #   See conda-recipes GH 423
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
-    wget --quiet https://repo.continuum.io/miniconda/Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh && \
+    wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh && \
     /bin/bash /Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh -b -p /opt/conda && \
     rm Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh && \
     /opt/conda/bin/conda install --yes conda==${CIVIS_CONDA_VERSION} && \
