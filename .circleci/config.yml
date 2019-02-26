@@ -33,6 +33,3 @@ jobs:
       - run:
           name: List packages installed from conda-forge
           command: docker run ds-python /bin/bash -c "conda list|grep conda-forge"
-      - run:
-          name: Check that the expected number of packages come from conda-forge
-          command: docker run ds-python /bin/bash -c "conda list|grep -c conda-forge|python -c \"import sys; actual_count = int(sys.stdin.readlines()[0]); expected_count = 11; assert actual_count == expected_count, 'There should be %d conda-forge packages, but there are actually %d.' % (expected_count, actual_count)\""
