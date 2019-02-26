@@ -52,7 +52,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 - muffnn 2.1.0 -> 2.2.0
 - pubnub 4.0.13 -> 4.1.2
 - requests-toolbelt 0.8.0 -> 0.9.1
-- tensorflow 1.7.0 -> 1.12.0
+- tensorflow 1.7.0 -> 1.13.1
 
 
 ### Maintenance
