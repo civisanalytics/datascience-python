@@ -35,4 +35,4 @@ jobs:
           command: docker run ds-python /bin/bash -c "conda list|grep conda-forge"
       - run:
           name: Check for conda-pip conflicts
-          command: docker run ds-python /bin/bash -c "conda list|python -c \"import sys; from collections import Counter; duplicates = {k for k, v in Counter([l.split()[0] for l in sys.stdin.readlines() if not l.startswith('#')]).items() if v>1}; assert not duplicates, f'These packages are installed by both pip and conda: {duplicates}'\""
+          command: docker run ds-python /bin/bash -c "conda list|python -c \"import sys; from collections import Counter; duplicates = {k for k, v in Counter([l.split()[0] for l in sys.stdin.readlines() if not l.startswith('#')]).items() if v>1}; assert not duplicates, f'These packages are installed by both pip and conda:\n{duplicates}'\""
