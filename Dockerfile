@@ -66,7 +66,7 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     /bin/bash /Miniconda3-${CIVIS_MINICONDA_VERSION}-Linux-x86_64.sh -b -p /opt/conda && \
     rm Miniconda3-${CIVIS_MINICONDA_VERSION}-Linux-x86_64.sh && \
     /opt/conda/bin/conda install --yes conda==${CIVIS_MINICONDA_VERSION} && \
-    conda install conda={CIVIS_CONDA_VERSION} && \
+    conda install conda=${CIVIS_CONDA_VERSION} && \
     echo "conda ==${CIVIS_CONDA_VERSION}" > /opt/conda/conda-meta/pinned && \
     conda install --yes python==${CIVIS_PYTHON_VERSION} && \
     echo "python ==${CIVIS_PYTHON_VERSION}" >> /opt/conda/conda-meta/pinned && \
