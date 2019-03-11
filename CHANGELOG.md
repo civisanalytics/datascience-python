@@ -31,7 +31,6 @@ Version number changes (major.minor.micro) in this package denote the following:
 - ipywidgets 7.1.0 -> 7.4.2
 - jinja2 2.9.6 -> 2.10
 - jsonschema 2.5.1 -> 3.0.1
-- libgfortran 3.0.0 -> 3.0.1
 - libtiff 4.0.6 -> 4.0.10
 - libxml2 2.9.2 -> 2.9.8
 - matplotlib 2.2.2 -> 3.0.3
@@ -57,7 +56,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 - civis 1.9.0 -> 1.9.4
 - civisml-extensions 0.1.8 -> 0.1.10
 - dropbox 7.1.1 -> 9.3.0
-- glmnet 2.0.0 -> 2.1.0
+- glmnet 2.0.0 -> 2.1.1
 - muffnn 2.1.0 -> 2.2.0
 - pubnub 4.0.13 -> 4.1.2
 - requests-toolbelt 0.8.0 -> 0.9.1
