@@ -12,6 +12,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 ## [5.0.0] - 2019-03-12
 ### Changed
 - python 3.6.4 -> 3.7.1
+- conda 4.3.30 -> 4.6.8
 
 ### New Packages
 - explicitly installs click=6.7
