@@ -1,4 +1,4 @@
-FROM ubuntu:18.04.1
+FROM ubuntu:18.04
 MAINTAINER support@civisanalytics.com
 
 # Ensure UTF-8 locale.
