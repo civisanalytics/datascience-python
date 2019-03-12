@@ -2,6 +2,7 @@ FROM ubuntu:18.04
 MAINTAINER support@civisanalytics.com
 
 # Ensure UTF-8 locale.
+RUN apt-get install locales
 RUN locale-gen en_US.UTF-8
 
 # Set environment variables for UTF-8, conda, and shell environments
