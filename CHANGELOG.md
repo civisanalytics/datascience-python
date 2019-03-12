@@ -34,7 +34,6 @@ Version number changes (major.minor.micro) in this package denote the following:
 - libtiff 4.0.6 -> 4.0.10
 - libxml2 2.9.2 -> 2.9.8
 - matplotlib 2.2.2 -> 3.0.3
-- nomkl 1.0 -> 3.0
 - notebook 5.4.1 -> 5.7.5
 - numexpr 2.6.2 -> 2.6.9
 - numpy 1.13.3 -> 1.16.2
@@ -48,7 +47,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 - requests 2.18.4 -> 2.21.0
 - s3fs 0.1.2 -> 0.2.0
 - seaborn 0.8 -> 0.9.0
-- scipy 1.0.1 -> 1.2.1
+- scipy 1.0.1 -> 1.2.0
 - scikit-learn 0.19.1 -> 0.19.2
 - statsmodels 0.8.0 -> 0.9.0
 - urllib3 1.22 -> 1.24.1
