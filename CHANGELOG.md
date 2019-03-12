@@ -11,6 +11,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## [5.0.0] - 2019-03-12
 ### Changed
+- Ubuntu 14.04 -> 18.04 (#67)
 - python 3.6.4 -> 3.7.1
 - conda 4.3.30 -> 4.6.8
 
@@ -61,9 +62,9 @@ Version number changes (major.minor.micro) in this package denote the following:
 - requests-toolbelt 0.8.0 -> 0.9.1
 - tensorflow 1.7.0 -> 1.13.1
 
-
 ### Maintenance
 - Update CircleCI config to v2 (#62).
+- Test that tensorflow imports successfully (#67).
 
 ## [4.2.0] - 2018-04-26
 ### Package Updates
