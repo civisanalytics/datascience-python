@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:18.04.1
 MAINTAINER support@civisanalytics.com
 
 # Ensure UTF-8 locale.
@@ -107,7 +107,7 @@ RUN jupyter nbextension enable --py widgetsnbextension
 # https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
 ENV JOBLIB_TEMP_FOLDER=/tmp
 
-ENV VERSION=4.2.0 \
-    VERSION_MAJOR=4 \
-    VERSION_MINOR=2 \
+ENV VERSION=5.0.0 \
+    VERSION_MAJOR=5 \
+    VERSION_MINOR=0 \
     VERSION_MICRO=0
