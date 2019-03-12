@@ -9,6 +9,59 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [5.0.0] - 2019-03-12
+### Changed
+- python 3.6.4 -> 3.7.1
+- conda 4.3.30 -> 4.6.8
+
+### New Packages
+- explicitly installs click=6.7
+
+### Package Updates
+- awscli 1.15.4 -> 1.16.121
+- beautifulsoup4 4.5.3 -> 4.7.1
+- botocore 1.10.4 -> 1.12.111
+- boto 2.46.1 -> 2.49.0
+- boto3 1.7.4 -> 1.9.111
+- bqplot 0.10.2 -> 0.11.5
+- cloudpickle 0.5.2 -> 0.8.0
+- cython 0.27.3 -> 0.29.6
+- dask 0.17.2 -> 1.1.4
+- ipython 6.1.0 -> 7.3.0
+- ipywidgets 7.1.0 -> 7.4.2
+- jinja2 2.9.6 -> 2.10
+- jsonschema 2.5.1 -> 3.0.1
+- libtiff 4.0.6 -> 4.0.10
+- libxml2 2.9.2 -> 2.9.8
+- matplotlib 2.2.2 -> 3.0.3
+- notebook 5.4.1 -> 5.7.5
+- numexpr 2.6.2 -> 2.6.9
+- numpy 1.13.3 -> 1.16.2
+- openblas 0.2.20 -> 0.3.5
+- pandas 0.22.0 -> 0.24.1
+- patsy 0.4.1 -> 0.5.1
+- psycopg2 2.6.2 -> 2.7.7
+- pyarrow 0.8.0 -> 0.12.1
+- pytest 3.1.3 -> 4.3.0
+- pyyaml 3.12 -> 3.13
+- requests 2.18.4 -> 2.21.0
+- s3fs 0.1.2 -> 0.2.0
+- seaborn 0.8 -> 0.9.0
+- scipy 1.0.1 -> 1.2.0
+- scikit-learn 0.19.1 -> 0.19.2
+- statsmodels 0.8.0 -> 0.9.0
+- urllib3 1.22 -> 1.24.1
+- xgboost 0.6a2 -> 0.81
+- civis 1.9.0 -> 1.9.4
+- civisml-extensions 0.1.8 -> 0.1.10
+- dropbox 7.1.1 -> 9.3.0
+- glmnet 2.0.0 -> 2.1.1
+- muffnn 2.1.0 -> 2.2.0
+- pubnub 4.0.13 -> 4.1.2
+- requests-toolbelt 0.8.0 -> 0.9.1
+- tensorflow 1.7.0 -> 1.13.1
+
+
 ### Maintenance
 - Update CircleCI config to v2 (#62).
 

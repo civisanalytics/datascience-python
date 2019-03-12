@@ -11,8 +11,9 @@ ENV LANG=en_US.UTF-8 \
     CONDARC=/opt/conda/.condarc \
     BASH_ENV=/etc/profile \
     PATH=/opt/conda/bin:$PATH \
-    CIVIS_CONDA_VERSION=4.3.30 \
-    CIVIS_PYTHON_VERSION=3.6.4
+    CIVIS_MINICONDA_VERSION=4.5.12 \
+    CIVIS_CONDA_VERSION=4.6.8 \
+    CIVIS_PYTHON_VERSION=3.7.1
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
   apt-get install -y --no-install-recommends software-properties-common && \
@@ -52,7 +53,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
 #
 # The ordering of these steps seems to matter. You seem to have to
 # install a specific python version by hand and then pin it.
-# 1) install conda
+# 1) install conda using CIVIS_MINICONDA_VERSION (may not be most up to date conda version)
 # 2) pin conda to the version given by CIVIS_CONDA_VERSION
 # 3) install the python version CIVIS_PYTHON_VERSION
 # 4) pin the python version
@@ -61,10 +62,11 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
 #   Red Hat and Debian use different names for this file. git2R wants the latter.
 #   See conda-recipes GH 423
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
-    wget --quiet https://repo.continuum.io/miniconda/Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh && \
-    /bin/bash /Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh -b -p /opt/conda && \
-    rm Miniconda3-${CIVIS_CONDA_VERSION}-Linux-x86_64.sh && \
-    /opt/conda/bin/conda install --yes conda==${CIVIS_CONDA_VERSION} && \
+    wget --quiet https://repo.continuum.io/miniconda/Miniconda3-${CIVIS_MINICONDA_VERSION}-Linux-x86_64.sh && \
+    /bin/bash /Miniconda3-${CIVIS_MINICONDA_VERSION}-Linux-x86_64.sh -b -p /opt/conda && \
+    rm Miniconda3-${CIVIS_MINICONDA_VERSION}-Linux-x86_64.sh && \
+    /opt/conda/bin/conda install --yes conda==${CIVIS_MINICONDA_VERSION} && \
+    conda install conda=${CIVIS_CONDA_VERSION} && \
     echo "conda ==${CIVIS_CONDA_VERSION}" > /opt/conda/conda-meta/pinned && \
     conda install --yes python==${CIVIS_PYTHON_VERSION} && \
     echo "python ==${CIVIS_PYTHON_VERSION}" >> /opt/conda/conda-meta/pinned && \
