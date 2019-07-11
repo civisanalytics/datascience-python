@@ -10,7 +10,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 ## Unreleased
 
 ### Added
-
+- added buildspecs for autobuilding and pushing Docker image to Amazon ECR 
 
 ### Package Updates
 - openblas 0.3.5 -> 0.3.6 (#68, #70)
