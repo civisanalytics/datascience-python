@@ -9,6 +9,13 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+### Added
+
+
+### Package Updates
+- openblas 0.3.5 -> 0.3.6 (#68, #70)
+
+
 ## [5.0.0] - 2019-03-12
 ### Changed
 - Ubuntu 14.04 -> 18.04 (#67)
