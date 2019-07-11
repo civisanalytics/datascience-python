@@ -1,0 +1,17 @@
+
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+  build:
+    commands:
+      - echo Building the Docker image...
+      - TAG_NAME=${TAG_NAME#"v"} # remove "v" from beginning of tag
+      - docker build --tag ${REPOSITORY_URI}:${TAG_NAME} .
+      - docker push ${REPOSITORY_URI}:${TAG_NAME}
+  post_build:
+    commands:
+      - echo Build completed!
+      - printf '{"tag":"%s"}' $TAG_NAME > build.json
