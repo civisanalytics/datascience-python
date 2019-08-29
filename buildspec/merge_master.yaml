@@ -1,4 +1,3 @@
-
 version: 0.2
 phases:
   pre_build:
@@ -8,12 +7,8 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - PATCH_TAG=${TAG_NAME#"v"} # major.minor.patch
-      - MINOR_TAG=${PATCH_TAG%.*} # major.minor
-      - MAJOR_TAG=${MINOR_TAG%.*} # major
-      - docker build -t ${REPOSITORY_URI}:${PATCH_TAG} -t ${REPOSITORY_URI}:${MINOR_TAG} -t ${REPOSITORY_URI}:${MAJOR_TAG} .
+      - docker build -t ${REPOSITORY_URI}:latest .
       - docker push ${REPOSITORY_URI}
   post_build:
     commands:
       - echo Build completed!
-      - printf '{"tag":"%s"}' $TAG_NAME > build.json
