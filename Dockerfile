@@ -31,7 +31,7 @@ ENV LANG=en_US.UTF-8 \
     PATH=/opt/conda/bin:$PATH \
     CIVIS_MINICONDA_VERSION=4.5.12 \
     CIVIS_CONDA_VERSION=4.6.8 \
-    CIVIS_PYTHON_VERSION=3.7.1
+    CIVIS_PYTHON_VERSION=3.7.6
 
 # Conda install.
 #
