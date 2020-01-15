@@ -8,13 +8,24 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompatible changes in the execution environment.
 
 ## Unreleased
-
-### Added
-- added buildspecs for autobuilding and pushing Docker image to Amazon ECR 
+### Changed
+- Python 3.7.1 -> 3.7.6
 
 ### Package Updates
 - openblas 0.3.5 -> 0.3.6 (#68, #70)
+- civis 1.9.4 -> 1.12.0 (#74, same for packages below)
+- civisml-extensions 0.1.10 -> 0.2.1
+- cloudpickle 0.8.0 -> 1.2.2
+- joblib 0.11.0 -> 0.14.1
+- muffnn 2.2.0 -> 2.3.0
+- numpy 1.16.2 -> 1.17.3
+- pandas 0.24.1 -> 0.25.3
+- pyarrow 0.12.1 -> 0.15.1
+- scipy 1.2.0 -> 1.4.1
+- scikit-learn 0.19.2 -> 0.22.1
 
+### Added
+- added buildspecs for autobuilding and pushing Docker image to Amazon ECR (#69)
 
 ## [5.0.0] - 2019-03-12
 ### Changed
