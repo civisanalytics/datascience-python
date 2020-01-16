@@ -19,6 +19,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 - cloudpickle 0.8.0 -> 1.2.2
 - joblib 0.11.0 -> 0.14.1
 - muffnn 2.2.0 -> 2.3.0
+- nomkl 1.0 -> 3.0
 - numpy 1.16.2 -> 1.17.3
 - pandas 0.24.1 -> 0.25.3
 - pyarrow 0.12.1 -> 0.15.1
