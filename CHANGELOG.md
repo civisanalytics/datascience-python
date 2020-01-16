@@ -10,6 +10,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 ## Unreleased
 ### Changed
 - Python 3.7.1 -> 3.7.6
+- Conda 4.6.8 -> 4.8.1
 
 ### Package Updates
 - openblas 0.3.5 -> 0.3.6 (#68, #70)

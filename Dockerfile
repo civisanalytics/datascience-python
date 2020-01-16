@@ -30,7 +30,7 @@ ENV LANG=en_US.UTF-8 \
     BASH_ENV=/etc/profile \
     PATH=/opt/conda/bin:$PATH \
     CIVIS_MINICONDA_VERSION=4.5.12 \
-    CIVIS_CONDA_VERSION=4.6.8 \
+    CIVIS_CONDA_VERSION=4.8.1 \
     CIVIS_PYTHON_VERSION=3.7.6
 
 # Conda install.
