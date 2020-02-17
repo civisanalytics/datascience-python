@@ -8,23 +8,56 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompatible changes in the execution environment.
 
 ## Unreleased
+
+## [6.0.0]
 ### Changed
-- Python 3.7.1 -> 3.7.6
-- Conda 4.6.8 -> 4.8.1
+- Python 3.7.1 -> 3.7.6 (#74)
+- Conda 4.6.8 -> 4.8.1 (#74)
+
+### Removed Packages
+- removes python-simple-hipchat (#75)
+
+### New Packages
+- explicitly installs pip=20.0.2 (#75)
 
 ### Package Updates
+- awscli 1.16.121 -> 1.17.15 (#75)
+- beautifulsoup4 4.7.1 -> 4.8.2 (#75)
+- botocore 1.12.111 -> 1.14.15 (#75)
+- boto3 1.9.111 -> 1.11.15 (#75)
+- bqplot 0.11.5 -> 0.12.3 (#75)
+- civis 1.9.4 -> 1.12.1 (#74)
+- civisml-extensions 0.1.10 -> 0.2.1 (#74)
+- cloudpickle 0.8.0 -> 1.2.2 (#74)
+- cython 0.29.6 -> 0.29.15 (#75)
+- dask 1.1.4 -> 2.10.1 (#75)
+- dropbox 9.3.0 -> 9.4.0 (#75)
+- ipython 7.3.0 -> 7.12.0 (#75)
+- ipywidgets 7.4.2 -> 7.5.1 (#75)
+- jinja2 2.10 -> 2.11.1 (#75)
+- joblib 0.11.0 -> 0.14.1 (#74)
+- jsonschema 3.0.1 -> 3.2.0 (#75)
+- libtiff 4.0.10 -> 4.1.0 (#75)
+- libxml2 2.9.8 -> 2.9.10 (#75)
+- matplotlib 3.0.3 -> 3.1.3 (#75)
+- muffnn 2.2.0 -> 2.3.0 (#74)
+- nomkl 1.0 -> 3.0 (#74)
+- notebook 5.7.5 -> 6.0.3 (#75)
+- numexpr 2.6.9 -> 2.7.1 (#75)
+- numpy 1.16.2 -> 1.17.3 (#74)
 - openblas 0.3.5 -> 0.3.6 (#68, #70)
-- civis 1.9.4 -> 1.12.0 (#74, same for packages below)
-- civisml-extensions 0.1.10 -> 0.2.1
-- cloudpickle 0.8.0 -> 1.2.2
-- joblib 0.11.0 -> 0.14.1
-- muffnn 2.2.0 -> 2.3.0
-- nomkl 1.0 -> 3.0
-- numpy 1.16.2 -> 1.17.3
-- pandas 0.24.1 -> 0.25.3
-- pyarrow 0.12.1 -> 0.15.1
-- scipy 1.2.0 -> 1.4.1
-- scikit-learn 0.19.2 -> 0.22.1
+- pandas 0.24.1 -> 0.25.3 (#74)
+- psycopg2 2.7.7 -> 2.8.4 (#75)
+- pubnub 4.1.2 -> 4.3.0 (#75)
+- pyarrow 0.12.1 -> 0.16.0 (#75)
+- pytest 4.3.0 -> 5.3.5 (#75)
+- requests 2.21.0 -> 2.22.0 (#75)
+- s3fs 0.2.0 -> 0.4.0 (#75)
+- scipy 1.2.0 -> 1.4.1 (#74)
+- scikit-learn 0.19.2 -> 0.22.1 (#74)
+- seaborn 0.9.0 -> 0.10.0 (#75)
+- statsmodels 0.9.0 -> 0.11.0 (#75)
+- urllib3 1.24.1 -> 1.25.7 (#75)
 
 ### Added
 - added buildspecs for autobuilding and pushing Docker image to Amazon ECR (#69)

@@ -43,7 +43,7 @@ ENV LANG=en_US.UTF-8 \
 # Things are pinned to prevent upgrades from conda and force it to
 # resolve dependencies relative to a fixed conda & python version.
 #
-# Note that the python version is also listed in the enviornment.yml
+# Note that the python version is also listed in the environment.yml
 # file. The version in CIVIS_PYTHON_VERSION is the source of truth.
 # If you want to change the python version, you need to change it in
 # **both** places. The python version has been left in the `environment.yml`
