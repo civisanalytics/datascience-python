@@ -9,6 +9,10 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [6.1.0]
+### Package Updates
+- civis 1.12.1 -> 1.13.0 (#76)
+
 ## [6.0.0]
 ### Changed
 - Python 3.7.1 -> 3.7.6 (#74)
