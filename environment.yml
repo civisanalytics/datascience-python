@@ -50,7 +50,7 @@ dependencies:
 - urllib3=1.25.7
 - xgboost=0.81
 - pip:
-  - civis==1.12.1
+  - civis==1.13.0
   - civisml-extensions==0.2.1
   - dropbox==9.4.0
   - ftputil==3.4
