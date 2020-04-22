@@ -50,12 +50,12 @@ dependencies:
 - urllib3=1.25.7
 - xgboost=0.81
 - pip:
-  - civis==1.13.0
+  - civis==1.14.0
   - civisml-extensions==0.2.1
   - dropbox==9.4.0
   - ftputil==3.4
-  - muffnn==2.3.0
+  - muffnn==2.3.1
   - pubnub==4.3.0
   - pysftp==0.2.9
   - requests-toolbelt==0.9.1
-  - tensorflow==1.13.1
+  - tensorflow==1.15.2

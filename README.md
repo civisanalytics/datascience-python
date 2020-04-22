@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/civisanalytics/datascience-python/tree/master.svg?style=svg)](https://circleci.com/gh/civisanalytics/datascience-python/tree/master)
 
-This image is created from the official Ubuntu 14.04 Docker image and contains popular Python packages for data science.
+This image is created from the official Ubuntu 18.04 Docker image and contains popular Python packages for data science.
 
 If you are reading this README on DockerHub, then the links to files in the GitHub respository will be broken. Please read this documentation from [GitHub](https://github.com/civisanalytics/datascience-python) instead.
 
