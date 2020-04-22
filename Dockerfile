@@ -106,7 +106,7 @@ RUN jupyter nbextension enable --py widgetsnbextension
 # https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
 ENV JOBLIB_TEMP_FOLDER=/tmp
 
-ENV VERSION=6.2.0 \
+ENV VERSION=6.2.1 \
     VERSION_MAJOR=6 \
     VERSION_MINOR=2 \
-    VERSION_MICRO=0
+    VERSION_MICRO=1

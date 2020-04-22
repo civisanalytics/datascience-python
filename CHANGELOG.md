@@ -9,6 +9,10 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [6.2.1]
+### Package Updates
+- civis 1.14.0 -> 1.14.1 (#78)
+
 ## [6.2.0]
 ### Package Updates
 - civis 1.13.0 -> 1.14.0 (#77)
