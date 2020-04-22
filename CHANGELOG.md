@@ -9,6 +9,12 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [6.2.0]
+### Package Updates
+- civis 1.13.0 -> 1.14.0 (#77)
+- muffnn 2.3.0 -> 2.3.1 (#77)
+- tensorflow 1.13.1 -> 1.15.2 (#77)
+
 ## [6.1.0]
 ### Package Updates
 - civis 1.12.1 -> 1.13.0 (#76)
