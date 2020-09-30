@@ -9,6 +9,11 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [6.3.0]
+### Package Updates
+- civis 1.14.0 -> 1.15.0 (#78)
+- tensorflow 1.15.2 -> 1.15.4 (#78)
+
 ## [6.2.1]
 ### Package Updates
 - civis 1.14.0 -> 1.14.1 (#78)
