@@ -11,8 +11,8 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## [6.3.0]
 ### Package Updates
-- civis 1.14.0 -> 1.15.0 (#78)
-- tensorflow 1.15.2 -> 1.15.4 (#78)
+- civis 1.14.0 -> 1.15.0 (#79)
+- tensorflow 1.15.2 -> 1.15.4 (#79)
 
 ## [6.2.1]
 ### Package Updates
