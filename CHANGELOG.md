@@ -11,7 +11,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## [6.4.0]
 ### Package Updates
-- PyYAML 3.13 -> 5.4.1
+- PyYAML 3.13 -> 5.2.0
 
 ## [6.3.1]
 ### Package Updates
