@@ -1,23 +1,22 @@
-name: datascience
 channels:
 - defaults
 - conda-forge
 dependencies:
-- awscli=1.17.15
+- awscli=1.17.17
 - beautifulsoup4=4.8.2
-- botocore=1.14.15
+- botocore=1.14.17
 - boto=2.49.0
-- boto3=1.11.15
-- bqplot=0.12.3
+- boto3=1.11.17
+- bqplot=0.12.31
 - click=6.7
 - cloudpickle=1.2.2
-- cython=0.29.15
+- cython=0.29.24
 - dask=2.10.1
-- feather-format=0.4.0
+- feather-format=0.4.1
 - glmnet=2.1.1
 - ipython=7.12.0
 - ipywidgets=7.5.1
-- jinja2=2.11.1
+- jinja2=2.11.3
 - joblib=0.14.1
 - jsonschema=3.2.0
 - jupyter=1.0.0
@@ -29,33 +28,34 @@ dependencies:
 - nomkl=3.0
 - notebook=6.0.3
 - nose=1.3.7
-- numexpr=2.7.1
-- numpy=1.17.3
+- numexpr=2.7.3
+- numpy=1.17.5
 - openblas=0.3.6
 - pandas=0.25.3
-- patsy=0.5.1
+- patsy=0.5.2
 - pip=20.0.2
-- psycopg2=2.8.4
+- psycopg2=2.8.6
 - pyarrow=0.16.0
 - pycrypto=2.6.1
 - pytest=5.3.5
-- python=3.7.6
+- python=3.7.11
 - pyyaml=5.2
 - requests=2.22.0
-- s3fs=0.4.0
-- seaborn=0.10.0
+- s3fs=0.4.2
+- seaborn=0.10.1
 - scipy=1.4.1
-- scikit-learn=0.22.1
-- statsmodels=0.11.0
-- urllib3=1.25.7
+- scikit-learn=0.22.2.post1
+- statsmodels=0.11.1
+- urllib3=1.25.11
 - xgboost=0.81
 - pip:
   - civis==1.15.1
   - civisml-extensions==0.2.1
   - dropbox==9.4.0
   - ftputil==3.4
-  - muffnn==2.3.1
+  - muffnn==2.3.2
   - pubnub==4.3.0
   - pysftp==0.2.9
   - requests-toolbelt==0.9.1
-  - tensorflow==1.15.4
+  - tensorflow==1.15.5
+name: datascience
