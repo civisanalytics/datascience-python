@@ -38,7 +38,7 @@ dependencies:
 - pyarrow=0.16.0
 - pycrypto=2.6.1
 - pytest=5.3.5
-- python=3.7.6
+- python=3.7.11
 - pyyaml=5.2
 - requests=2.22.0
 - s3fs=0.4.2
