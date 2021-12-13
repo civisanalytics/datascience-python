@@ -50,12 +50,11 @@ dependencies:
 - urllib3=1.25.7
 - xgboost=0.81
 - pip:
-  - civis==1.15.1
+  - git+https://github.com/civisanalytics/civis-python.git@civis-1835-v1.16.0-release#egg=civis
   - civisml-extensions==0.2.1
   - dropbox==9.4.0
   - ftputil==3.4
   - muffnn==2.3.1
-  - pubnub==4.3.0
   - pysftp==0.2.9
   - requests-toolbelt==0.9.1
   - tensorflow==1.15.4
