@@ -9,6 +9,11 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [6.5.0]
+### Package Updates
+- civis 1.15.1 -> 1.16.0 (#84)
+- Removed pubnub - not considered a breaking change, as it was a dependency for `civis` (#84)
+
 ## [6.4.0]
 ### Package Updates
 - PyYAML 3.13 -> 5.2.0
