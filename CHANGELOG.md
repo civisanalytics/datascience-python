@@ -9,6 +9,10 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [6.5.1]
+### Package Updates
+- Pin cffi at 1.14.0 (#85)
+
 ## [6.5.0]
 ### Package Updates
 - civis 1.15.1 -> 1.16.0 (#84)
