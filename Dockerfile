@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 MAINTAINER support@civisanalytics.com
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
