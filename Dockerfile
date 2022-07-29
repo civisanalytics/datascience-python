@@ -1,6 +1,7 @@
 FROM ubuntu:22.04
 MAINTAINER support@civisanalytics.com
 
+RUN apt-get update && apt-get install -y gnupg
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 871920D1991BC93C
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
