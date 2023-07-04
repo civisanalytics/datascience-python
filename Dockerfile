@@ -29,9 +29,9 @@ ENV LANG=en_US.UTF-8 \
     CONDARC=/opt/conda/.condarc \
     BASH_ENV=/etc/profile \
     PATH=/opt/conda/bin:$PATH \
-    MINICONDA_VERSION=23.3.1-0 \
+    MINICONDA_VERSION=23.3.1 \
     CONDA_VERSION=23.5.0 \
-    PYTHON_VERSION=3.11.4
+    PYTHON_VERSION=3.8
 
 # Conda install.
 #
@@ -61,9 +61,9 @@ ENV LANG=en_US.UTF-8 \
 #   Red Hat and Debian use different names for this file. git2R wants the latter.
 #   See conda-recipes GH 423
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
-    wget --quiet https://repo.continuum.io/miniconda/Miniconda3-py310_${MINICONDA_VERSION}-Linux-x86_64.sh && \
-    /bin/bash /Miniconda3-py310_${MINICONDA_VERSION}-Linux-x86_64.sh -b -p /opt/conda && \
-    rm Miniconda3-py310_${MINICONDA_VERSION}-Linux-x86_64.sh
+    wget --quiet https://repo.continuum.io/miniconda/Miniconda3-py310_${MINICONDA_VERSION}-0-Linux-x86_64.sh && \
+    /bin/bash /Miniconda3-py310_${MINICONDA_VERSION}-0-Linux-x86_64.sh -b -p /opt/conda && \
+    rm Miniconda3-py310_${MINICONDA_VERSION}-0-Linux-x86_64.sh
 
 RUN /opt/conda/bin/conda install --yes conda==${CONDA_VERSION} && \
     conda install conda=${CONDA_VERSION} && \
@@ -76,13 +76,17 @@ RUN /opt/conda/bin/conda install --yes conda==${CONDA_VERSION} && \
 RUN ln -s /opt/conda/lib/libopenblas.so /opt/conda/lib/libblas.so && \
     ln -s /opt/conda/lib/libopenblas.so /opt/conda/lib/liblapack.so && \
     ln -s /opt/conda/lib/libssl.so /opt/conda/lib/libssl.so.6 && \
-    ln -s /opt/conda/lib/libcrypto.so /opt/conda/lib/libcrypto.so.6
+    ln -s /opt/conda/lib/libcrypto.so /opt/conda/lib/libcrypto.so.6 && \
+    ln -s /opt/conda/lib/libarchive.so /opt/conda/lib/libarchive.so.19
+
+COPY .condarc /opt/conda/.condarc
+COPY environment.yml environment.yml
 
 # Install boto in the base environment for private s3 channel support.
 # Install Python Packages
-COPY .condarc /opt/conda/.condarc
-COPY environment.yml environment.yml
-RUN conda install -y boto && \
+RUN conda install -n base conda-libmamba-solver && \
+    conda config --set solver libmamba && \
+    conda install -y boto && \
     conda install -y nomkl && \
     conda env update -f environment.yml -n root && \
     conda clean --all -y && \
