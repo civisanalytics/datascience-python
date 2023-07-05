@@ -31,7 +31,7 @@ ENV LANG=en_US.UTF-8 \
     PATH=/opt/conda/bin:$PATH \
     MINICONDA_VERSION=23.3.1 \
     CONDA_VERSION=23.5.0 \
-    PYTHON_VERSION=3.8
+    PYTHON_VERSION=3.11.4
 
 # Conda install.
 #
