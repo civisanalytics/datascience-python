@@ -67,6 +67,7 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
 
 RUN /opt/conda/bin/conda install --yes conda==${CONDA_VERSION} && \
     conda install conda=${CONDA_VERSION} && \
+    conda config --set channel_priority strict && \
     echo "conda ==${CONDA_VERSION}" > /opt/conda/conda-meta/pinned && \
     conda config --append channels conda-forge && \
     conda install --yes python==${PYTHON_VERSION} && \
@@ -84,7 +85,8 @@ COPY environment.yml environment.yml
 
 # Install boto in the base environment for private s3 channel support.
 # Install Python Packages
-RUN conda install -n base conda-libmamba-solver && \
+RUN conda config --set channel_priority strict && \
+    conda install -n base conda-libmamba-solver && \
     conda config --set solver libmamba && \
     conda install -y boto && \
     conda install -y nomkl && \

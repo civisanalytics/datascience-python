@@ -1,5 +1,6 @@
 channels:
     - defaults
+    - conda-forge
 
 show_channel_urls: True
 
