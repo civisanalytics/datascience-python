@@ -68,18 +68,23 @@ default location for staging temporary files to the /tmp directory.
 The normal default is /shm. /shm is a RAM disk which defaults to a 64 MB size
 in Docker containers, too small for typical scientific computing.
 
+# Install a new PyPi Package Dependency
+1. Create a new python environment `python  -m venv .venv`.
+2. Activate your new python environment `source .venv/bin/activate`
+3. Add new dependency to `requirements-core.txt` file. Include the version
+4. Run script `generate-requirements-full.sh`
+
+# Updating existing PyPi Package Version
+1. Create a new python environment `python  -m venv .venv`.
+2. Activate your new python environment `source .venv/bin/activate`
+3. Update version of existing package in requirements-core.txt
+4. Run script `generate-requirements-full.sh`
+
 # Creating Equivalent Local Environments
 
-The `environment.yml` file in this repo can be used to create a python environment that is
-equivalent to the one in the container. This environment will be named `datascience`.
-The environment installs in Ubuntu Linux (this is the OS of the Dockerfile).
-It will install in OS X, but the `xgboost` install requires either
-the `gcc` v5 or the `clang-omp` compiler, neither of which are natively provided in OS X.
-If you wish to set up this environment in OS X, you may either
-- Remove `xgboost` from the `environment.yml` file before using it to create the environment
-- Use [Homebrew](https://brew.sh/) to install `gcc-5`. You can do that via
-`brew install gcc@5 --without-multilib`. Be warned that this installation will take
-a long time.
+1. Create a new python environment `python  -m venv .venv`.
+2. Activate your new python environment `source .venv/bin/activate`
+3. Install requirements.txt `requirements-full.txt`
 
 # Contributing
 
