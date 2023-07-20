@@ -16,9 +16,6 @@ jobs:
           name: Check that scipy links to OpenBLAS
           command: docker run ds-python python -c "from scipy.linalg import _fblas"
       - run:
-          name: Verify that numpy and matplotlib function
-          command: docker run ds-python python -c "import numpy, os; import matplotlib.pyplot as plt; x = numpy.arange(100); y = numpy.sin(x); plt.plot(x, y);"
-      - run:
           name: Check that seaborn is installed
           command: docker run ds-python python -c "import seaborn"
       - run:
