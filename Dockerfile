@@ -1,5 +1,7 @@
 FROM python:3.11.4-bookworm
 
+LABEL maintainer = support@civisanalytics.com
+
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
   apt-get install -y --no-install-recommends locales && \
   locale-gen en_US.UTF-8 && \
