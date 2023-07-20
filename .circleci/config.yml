@@ -21,6 +21,7 @@ jobs:
       - run:
           name: Verify that numpy does not link to MKL
           command: docker run ds-python python -c "from numpy.distutils import system_info; assert system_info.get_info('mkl') == {}"
+
       - run:
           name: Run numpy unit tests
-          command: docker run ds-python python -c "import numpy; numpy.test()"
+          command: docker run ds-python /bin/bash -c 'pip install pytest hypothesis; python -c "import numpy; numpy.test()"'
