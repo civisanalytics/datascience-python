@@ -69,19 +69,14 @@ The normal default is /shm. /shm is a RAM disk which defaults to a 64 MB size
 in Docker containers, too small for typical scientific computing.
 
 # Install a new PyPi Package Dependency
-1. Create a new python environment `python  -m venv .venv`.
-2. Activate your new python environment `source .venv/bin/activate`
-3. Add new dependency to `requirements-core.txt` file. Include the version
-4. Run script `generate-requirements-full.sh`
+1. Add new dependency to `requirements-core.txt` file. Include the version
+2. Run script `generate-requirements-full.sh`
 
 # Updating existing PyPi Package Version
-1. Create a new python environment `python  -m venv .venv`.
-2. Activate your new python environment `source .venv/bin/activate`
-3. Update version of existing package in requirements-core.txt
-4. Run script `generate-requirements-full.sh`
+1. Update version of existing package in `requirements-core.txt`
+2. Run script `generate-requirements-full.sh`
 
 # Creating Equivalent Local Environments
-
 1. Create a new python environment `python  -m venv .venv`.
 2. Activate your new python environment `source .venv/bin/activate`
 3. Install requirements.txt `requirements-full.txt`
