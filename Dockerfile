@@ -25,7 +25,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
 
 COPY requirements-full.txt .
 
-RUN pip install -r requirements-full.txt
+RUN pip install -r requirements-full.txt && \
+  pip cache purge && \
+  rm requirements-full.txt
 
 # Instruct joblib to use disk for temporary files. Joblib defaults to
 # /shm when that directory is present. In the Docker container, /shm is

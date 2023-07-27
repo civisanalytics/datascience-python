@@ -79,7 +79,7 @@ in Docker containers, too small for typical scientific computing.
 # Creating Equivalent Local Environments
 1. Create a new python environment `python  -m venv .venv`.
 2. Activate your new python environment `source .venv/bin/activate`
-3. Install requirements.txt `requirements-full.txt`
+3. Install requirements.txt `pip install -r requirements-full.txt`
 
 # Contributing
 

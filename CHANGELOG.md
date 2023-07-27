@@ -9,6 +9,11 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [7.0.0]
+- Python updated to v3.11.4
+- Refactors Dockerfile to use the official Python docker image
+- Removes Conda Dependency
+
 ## [6.5.1]
 ### Package Updates
 - Pin cffi at 1.14.0 (#85)
