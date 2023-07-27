@@ -13,6 +13,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 - Python updated to v3.11.4
 - Refactors Dockerfile to use the official Python docker image
 - Removes Conda Dependency
+- Keeps only the core data science python packages
 
 ## [6.5.1]
 ### Package Updates
