@@ -7,4 +7,4 @@ phases:
       - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${REPOSITORY_URI}
       - echo Building the Docker image...
       - docker build -t ${REPOSITORY_URI}:${civis-6103-fix-unknown-public-keys} .
-      - docker push ${REPOSITORY_URI}
+      - docker push ${REPOSITORY_URI}:${civis-6103-fix-unknown-public-keys}
