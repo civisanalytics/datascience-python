@@ -1,0 +1,16 @@
+
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+  build:
+    commands:
+      - echo Building the Docker image...
+      - docker build -t ${REPOSITORY_URI}:${civis-6103-fix-unknown-public-keys} .
+      - docker push ${REPOSITORY_URI}
+  post_build:
+    commands:
+      - echo Build completed!
+      - printf '{"tag":"%s"}' $TAG_NAME > build.json
