@@ -2,11 +2,11 @@ FROM python:3.11.4-bookworm
 
 LABEL maintainer = support@civisanalytics.com
 
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9 && \
-  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6ED0E7B82643E131 && \
-  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 54404762BBB6E853 && \
-  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BDE6D2B9216EC7A8 && \
-  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F8D2585B8783D481
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6ED0E7B82643E131
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 54404762BBB6E853
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BDE6D2B9216EC7A8
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F8D2585B8783D481
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends
 
