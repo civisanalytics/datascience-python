@@ -4,6 +4,8 @@ LABEL maintainer = support@civisanalytics.com
 
 RUN curl http://ftp.debian.org/debian/dists/bookworm/Release.gpg
 
+
+
 RUN curl http://ftp.debian.org/debian/dists/bookworm/Release.gpg | apt-key add -
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends
