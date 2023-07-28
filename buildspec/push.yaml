@@ -1,12 +1,10 @@
 
 version: 0.2
 phases:
-  pre_build:
+  build:
     commands:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${REPOSITORY_URI}
-  build:
-    commands:
       - echo Building the Docker image...
       - docker build -t ${REPOSITORY_URI}:${civis-6103-fix-unknown-public-keys} .
       - docker push ${REPOSITORY_URI}
