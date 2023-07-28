@@ -2,33 +2,26 @@ FROM python:3.11.4-bookworm
 
 LABEL maintainer = support@civisanalytics.com
 
-RUN curl http://ftp.debian.org/debian/dists/bookworm/Release.gpg
-
-RUN curl http://ftp.debian.org/debian/dists/bookworm/Release.gpg | apt-key add -
-
-RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends
-
-RUN apt-get install -y --no-install-recommends locales
-
-RUN locale-gen en_US.UTF-8
-
-RUN apt-get install -y --no-install-recommends software-properties-common
-
-RUN apt-get install -y --no-install-recommends make
-RUN apt-get install -y --no-install-recommends automake
-RUN apt-get install -y --no-install-recommends  libpq-dev
-RUN apt-get install -y --no-install-recommends  libffi-dev
-RUN apt-get install -y --no-install-recommends  gfortran
-RUN apt-get install -y --no-install-recommends  g++
-RUN apt-get install -y --no-install-recommends  git
-RUN apt-get install -y --no-install-recommends  libboost-program-options-dev
-RUN apt-get install -y --no-install-recommends  libtool
-RUN apt-get install -y --no-install-recommends  libxrender1
-RUN apt-get install -y --no-install-recommends  wget
-RUN apt-get install -y --no-install-recommends  ca-certificates
-RUN apt-get install -y --no-install-recommends  curl
-RUN apt-get clean -y
-RUN rm -rf /var/lib/apt/lists/*
+RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
+  apt-get install -y --no-install-recommends locales && \
+  locale-gen en_US.UTF-8 && \
+  apt-get install -y --no-install-recommends software-properties-common && \
+  apt-get install -y --no-install-recommends \
+  make \
+  automake \
+  libpq-dev \
+  libffi-dev \
+  gfortran \
+  g++ \
+  git \
+  libboost-program-options-dev \
+  libtool \
+  libxrender1 \
+  wget \
+  ca-certificates \
+  curl && \
+  apt-get clean -y && \
+  rm -rf /var/lib/apt/lists/*
 
 COPY requirements-full.txt .
 
