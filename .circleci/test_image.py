@@ -17,9 +17,10 @@ class TestImage(unittest.TestCase):
         self.assertTrue(micro.isdigit())
         self.assertEqual(version_in_env_var, f"{major}.{minor}.{micro}")
 
-        version_in_changelog = re.search(
-            r"##\s+\[(\d+\.\d+\.\d+)]", open("CHANGELOG.md").read()
-        ).groups()[0]
+        with open("CHANGELOG.md") as changelog:
+            version_in_changelog = re.search(
+                r"##\s+\[(\d+\.\d+\.\d+)]", changelog.read()
+            ).groups()[0]
         self.assertEqual(version_in_changelog, version_in_env_var)
 
     def test_scipy_links_to_openblas(self):
