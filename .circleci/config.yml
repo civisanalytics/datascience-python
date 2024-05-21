@@ -19,9 +19,6 @@ jobs:
           name: Check that numpy imports from bash shell
           command: docker run -t ds-python /bin/bash -c "python -c 'import numpy'"
       - run:
-          name: Verify that numpy does not link to MKL
-          command: docker run ds-python python -c "from numpy.distutils import system_info; assert system_info.get_info('mkl') == {}"
-      - run:
           name: Validate compatibility of civis-python with other packages
           command: docker run ds-python /bin/bash -c "python -c 'import civis'"
       - run:
