@@ -13,14 +13,5 @@ jobs:
           name: Verify build completed
           command: docker run ds-python /bin/bash -c "echo BUILDS OK"
       - run:
-          name: Check that scipy links to OpenBLAS
-          command: docker run ds-python python -c "from scipy.linalg import _fblas"
-      - run:
-          name: Check that numpy imports from bash shell
-          command: docker run -t ds-python /bin/bash -c "python -c 'import numpy'"
-      - run:
-          name: Validate compatibility of civis-python with other packages
-          command: docker run ds-python /bin/bash -c "python -c 'import civis'"
-      - run:
-          name: Run numpy unit tests
-          command: docker run ds-python /bin/bash -c 'pip install pytest hypothesis; python -c "import numpy; numpy.test()"'
+          name: Run tests
+          command: docker run ds-python /test_image.py
