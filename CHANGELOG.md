@@ -17,7 +17,7 @@ Version number changes (major.minor.micro) in this package denote the following:
   * civis 1.16.1 -> 2.0.0
   * numpy 1.25.1 -> 1.26.4
   * pandas 2.0.3 -> 2.2.2
-  * requests 2.31.0 -> 2.32.1
+  * requests 2.31.0 -> 2.32.2
   * scikit-learn 1.3.0 -> 1.5.0
   * scipy 1.11.1 -> 1.13.0
 
