@@ -14,4 +14,4 @@ jobs:
           command: docker run ds-python /bin/bash -c "echo BUILDS OK"
       - run:
           name: Run tests
-          command: docker run ds-python /test_image.py
+          command: docker run ds-python /test_image.py -vv
