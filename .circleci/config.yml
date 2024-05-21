@@ -8,7 +8,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build container
-          command: docker build -t ds-python .
+          command: docker build --target test -t ds-python .
       - run:
           name: Verify build completed
           command: docker run ds-python /bin/bash -c "echo BUILDS OK"
