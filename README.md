@@ -2,9 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/civisanalytics/datascience-python/tree/master.svg?style=svg)](https://circleci.com/gh/civisanalytics/datascience-python/tree/master)
 
-This image is created from the official Ubuntu 18.04 Docker image and contains popular Python packages for data science.
-
-If you are reading this README on DockerHub, then the links to files in the GitHub respository will be broken. Please read this documentation from [GitHub](https://github.com/civisanalytics/datascience-python) instead.
+If you are reading this README on DockerHub, then the links to files in the GitHub repository will be broken. Please read this documentation from [GitHub](https://github.com/civisanalytics/datascience-python) instead.
 
 # Introduction
 
@@ -35,7 +33,7 @@ to retrieve a reproducible environment.
 
 Inside the datascience-python Docker image, Python packages are installed in the `root`
 environment. For a full list of included Python libraries, see the
-[environment.yml](environment.yml) file.
+[requirements-core.txt](requirements-core.txt) file.
 
 To start a Docker container from the datascience-python image and
 interact with it from a bash prompt, use
@@ -56,7 +54,7 @@ VERSION_MAJOR
 VERSION_MINOR
 VERSION_MICRO
 ```
-VERSION contains the full version string, e.g. "1.0.3". VERSION_MAJOR,
+VERSION contains the full version string, e.g., "1.0.3". VERSION_MAJOR,
 VERSION_MINOR, and VERSION_MICRO each contain a single integer.
 
 ## Joblib Temporary Files
@@ -67,10 +65,6 @@ library uses `joblib` for parallelization. This Docker image sets `joblib`'s
 default location for staging temporary files to the /tmp directory.
 The normal default is /shm. /shm is a RAM disk which defaults to a 64 MB size
 in Docker containers, too small for typical scientific computing.
-
-# Install a new PyPi Package Dependency
-1. Add new dependency to `requirements-core.txt` file. Include the version
-2. Run script `generate-requirements-full.sh`
 
 # Updating existing PyPi Package Version
 1. Update version of existing package in `requirements-core.txt`
@@ -96,7 +90,7 @@ and describe any changes in the [change log](CHANGELOG.md).
 This repo has autobuild enabled. Any PR that is merged to master will
 be built as the `latest` tag on Dockerhub.
 Once you are ready to create a new version, go to the "releases" tab of the repository and click
-"Draft a new release". Github will prompt you to create a new tag, release title, and release
+"Draft a new release". GitHub will prompt you to create a new tag, release title, and release
 description. The tag should use semantic versioning in the form "vX.X.X"; "major.minor.micro".
 The title of the release should be the same as the tag. Include a change log in the release description.
 Once the release is tagged, DockerHub will automatically build three identical containers, with labels

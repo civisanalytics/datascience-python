@@ -9,6 +9,18 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [7.1.0]
+- Python updated to v3.12.3
+- Core dependencies updated to latest versions:
+  * awscli 1.29.5 -> 1.32.109
+  * boto3 1.28.5 -> 1.34.109
+  * civis 1.16.1 -> 2.0.0
+  * numpy 1.25.1 -> 1.26.4
+  * pandas 2.0.3 -> 2.2.2
+  * requests 2.31.0 -> 2.32.2
+  * scikit-learn 1.3.0 -> 1.5.0
+  * scipy 1.11.1 -> 1.13.0
+
 ## [7.0.0]
 - Python updated to v3.11.4
 - Refactors Dockerfile to use the official Python docker image

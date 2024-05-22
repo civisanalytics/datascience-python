@@ -1,4 +1,4 @@
-FROM python:3.11.4-bookworm
+FROM python:3.12.3-slim AS production
 
 LABEL maintainer = support@civisanalytics.com
 
@@ -35,7 +35,14 @@ RUN pip install -r requirements-full.txt && \
 # https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
 ENV JOBLIB_TEMP_FOLDER=/tmp
 
-ENV VERSION=7.0.0 \
+ENV VERSION=7.1.0 \
   VERSION_MAJOR=7 \
-  VERSION_MINOR=0 \
+  VERSION_MINOR=1 \
   VERSION_MICRO=0
+
+FROM production AS test
+COPY .circleci/test_image.py .
+COPY CHANGELOG.md .
+
+# Defaults to production as the final stage
+FROM production
