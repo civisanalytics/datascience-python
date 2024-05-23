@@ -35,9 +35,9 @@ RUN pip install -r requirements-full.txt && \
 # https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
 ENV JOBLIB_TEMP_FOLDER=/tmp
 
-ENV VERSION=7.1.0 \
+ENV VERSION=7.2.0 \
   VERSION_MAJOR=7 \
-  VERSION_MINOR=1 \
+  VERSION_MINOR=2 \
   VERSION_MICRO=0
 
 FROM production AS test

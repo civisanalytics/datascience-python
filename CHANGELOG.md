@@ -9,6 +9,13 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [7.2.0]
+- Core dependencies updated to latest versions:
+  * awscli 1.32.109 -> 1.32.112
+  * boto3 1.34.109 -> 1.34.112
+  * civis 2.0.0 -> 2.1.0
+  * scipy 1.13.0 -> 1.13.1
+
 ## [7.1.0]
 - Python updated to v3.12.3
 - Core dependencies updated to latest versions:
