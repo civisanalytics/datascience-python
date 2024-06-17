@@ -29,8 +29,18 @@ class TestImage(unittest.TestCase):
     def test_numpy_can_import(self):
         import numpy as np  # noqa: F401
 
+    def test_sklearn_can_import(self):
+        import sklearn  # noqa: F401
+
     def test_civis_can_import(self):
         import civis  # noqa: F401
+        # civis-python uses lazy imports since v2.3.0,
+        # so try to import the top-level modules.
+        import civis.io  # noqa: F401
+        import civis.parallel  # noqa: F401
+        import civis.futures  # noqa: F401
+        import civis.ml  # noqa: F401
+        import civis.utils  # noqa: F401
 
 
 if __name__ == "__main__":

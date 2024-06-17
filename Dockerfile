@@ -25,8 +25,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
 
 COPY requirements-full.txt .
 
-RUN pip install -r requirements-full.txt && \
-  pip cache purge && \
+RUN pip install --progress-bar off --no-cache-dir -r requirements-full.txt && \
   rm requirements-full.txt
 
 # Instruct joblib to use disk for temporary files. Joblib defaults to
@@ -35,9 +34,9 @@ RUN pip install -r requirements-full.txt && \
 # https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
 ENV JOBLIB_TEMP_FOLDER=/tmp
 
-ENV VERSION=7.2.0 \
+ENV VERSION=7.3.0 \
   VERSION_MAJOR=7 \
-  VERSION_MINOR=2 \
+  VERSION_MINOR=3 \
   VERSION_MICRO=0
 
 FROM production AS test
