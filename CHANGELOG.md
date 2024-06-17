@@ -16,6 +16,7 @@ Version number changes (major.minor.micro) in this package denote the following:
   * civis 2.1.0 -> 2.3.0
   * numpy 1.26.4 -> 2.0.0
   * requests 2.32.2 -> 2.32.3
+- Python version updated to v3.12.4
 
 ## [7.2.0]
 - Core dependencies updated to latest versions:

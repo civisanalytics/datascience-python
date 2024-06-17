@@ -1,4 +1,4 @@
-FROM python:3.12.3-slim AS production
+FROM python:3.12.4-slim AS production
 
 LABEL maintainer = support@civisanalytics.com
 
