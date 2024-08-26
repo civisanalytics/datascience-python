@@ -1,0 +1,11 @@
+services:
+  pip-tools:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: pip-tools
+    volumes:
+      - .:/app
+    stdin_open: true
+    tty: true
+    working_dir: /app

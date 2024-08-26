@@ -1,6 +1,13 @@
-FROM python:3.12.4-slim AS production
+ARG PLATFORM=linux/x86_64
+ARG BASE_IMAGE=python:3.12.5-slim
 
-LABEL maintainer = support@civisanalytics.com
+# This is the primary build target used for the production image
+FROM --platform=$PLATFORM $BASE_IMAGE AS production
+
+# Disable pip warnings https://stackoverflow.com/a/72551258
+ENV PIP_ROOT_USER_ACTION=ignore
+
+LABEL maintainer=support@civisanalytics.com
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
   apt-get install -y --no-install-recommends locales && \
@@ -19,7 +26,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
   libxrender1 \
   wget \
   ca-certificates \
-  curl && \
+  curl \
+  mandoc \
+  unzip && \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/*
 
@@ -34,14 +43,28 @@ RUN pip install --progress-bar off --no-cache-dir -r requirements-full.txt && \
 # https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
 ENV JOBLIB_TEMP_FOLDER=/tmp
 
-ENV VERSION=7.3.0 \
-  VERSION_MAJOR=7 \
-  VERSION_MINOR=3 \
+ENV VERSION=8.0.0 \
+  VERSION_MAJOR=8 \
+  VERSION_MINOR=0 \
   VERSION_MICRO=0
 
-FROM production AS test
+# Install the AWSCLI for moving match targets in the QC workflow.
+# See https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#cliv2-linux-install
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+    unzip awscliv2.zip && \
+    ./aws/install && \
+    rm -rf aws awscliv2.zip
+
+# This build target is for testing in Circle CI.
+FROM --platform=$PLATFORM production AS test
 COPY .circleci/test_image.py .
 COPY CHANGELOG.md .
 
-# Defaults to production as the final stage
+# This build target is for updating dependencies.
+# See generate-requirements.full.sh.
+FROM --platform=$PLATFORM $BASE_IMAGE AS pip-tools
+RUN pip install -U --no-cache-dir pip pip-tools --progress-bar off
+CMD ["/bin/bash"]
+
+# Default to the production build target.
 FROM production
