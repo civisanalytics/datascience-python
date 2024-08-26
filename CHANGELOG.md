@@ -9,6 +9,11 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [8.0.0]
+- Core dependencies updated to latest versions:
+  * TODO
+- Python version updated to v3.12.5
+
 ## [7.3.0]
 - Core dependencies updated to latest versions:
   * awscli 1.32.112 -> 1.33.9
