@@ -1,6 +1,6 @@
-FROM python:3.12.4-slim AS production
+FROM ubuntu/python:3.12-24.04_stable AS production
 
-LABEL maintainer = support@civisanalytics.com
+LABEL maintainer=support@civisanalytics.com
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
   apt-get install -y --no-install-recommends locales && \

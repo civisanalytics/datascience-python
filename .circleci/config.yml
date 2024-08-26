@@ -7,7 +7,7 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          name: Build container
+          name: Build image
           command: docker build --target test -t ds-python .
       - run:
           name: Verify build completed
