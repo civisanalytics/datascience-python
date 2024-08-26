@@ -27,6 +27,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
   wget \
   ca-certificates \
   curl \
+  mandoc # For AWS CLI help \
   unzip && \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/*
