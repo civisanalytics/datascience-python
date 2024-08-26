@@ -11,8 +11,9 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## [8.0.0]
 - Core dependencies updated to latest versions:
-  * TODO
+  * awscli 1.33.9 -> 2.17.37
 - Python version updated to v3.12.5
+- Fixes apt-get for debian package installations
 
 ## [7.3.0]
 - Core dependencies updated to latest versions:
