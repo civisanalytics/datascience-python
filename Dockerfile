@@ -43,10 +43,10 @@ RUN pip install --progress-bar off --no-cache-dir -r requirements-full.txt && \
 # https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
 ENV JOBLIB_TEMP_FOLDER=/tmp
 
-ENV VERSION=8.0.0 \
+ENV VERSION=8.0.1 \
   VERSION_MAJOR=8 \
   VERSION_MINOR=0 \
-  VERSION_MICRO=0
+  VERSION_MICRO=1
 
 # Install the AWSCLI for moving match targets in the QC workflow.
 # See https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#cliv2-linux-install
