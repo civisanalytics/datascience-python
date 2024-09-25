@@ -1,5 +1,5 @@
 ARG PLATFORM=linux/x86_64
-ARG BASE_IMAGE=python:3.12.5-slim
+ARG BASE_IMAGE=python:3.12.6-slim
 
 # This is the primary build target used for the production image
 FROM --platform=$PLATFORM $BASE_IMAGE AS production
