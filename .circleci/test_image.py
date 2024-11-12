@@ -2,9 +2,11 @@
 
 import os
 import re
+import shutil
 import unittest
 
 
+# Just use the stdlib's `unittest` rather than needing to install `pytest`.
 class TestImage(unittest.TestCase):
 
     def test_version(self):
@@ -41,6 +43,12 @@ class TestImage(unittest.TestCase):
         import civis.futures  # noqa: F401
         import civis.ml  # noqa: F401
         import civis.utils  # noqa: F401
+
+    def test_shell_commands_available(self):
+        # A non-exhaustive list of commands -- we just test those we'd likely use.
+        expected_cmds = "aws civis curl git pip python wget unzip".split()
+        for cmd in expected_cmds:
+            self.assertIsNotNone(shutil.which(cmd), f"{cmd} not found in PATH")
 
 
 if __name__ == "__main__":
