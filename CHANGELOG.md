@@ -9,6 +9,19 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [8.1.0]
+
+- Python version updated to v3.12.7
+- Core dependencies updated to latest versions:
+  * awscli 2.17.37 -> 2.19.5
+  * boto3 1.34.127 -> 1.35.58
+  * civis 2.3.0 -> 2.4.0
+  * numpy 2.0.0 -> 2.1.3
+  * pandas 2.2.2 -> 2.2.3
+  * scikit-learn 1.5.0 -> 1.5.2
+  * scipy 1.13.1 -> 1.14.1
+- uv added to the image
+
 ## [8.0.1]
 
 - Python version updated to v3.12.6

@@ -42,7 +42,7 @@ ADD https://astral.sh/uv/0.5.1/install.sh /uv-installer.sh
 RUN sh /uv-installer.sh && rm /uv-installer.sh
 ENV PATH="/root/.local/bin/:$PATH"
 
-  # Instruct joblib to use disk for temporary files. Joblib defaults to
+# Instruct joblib to use disk for temporary files. Joblib defaults to
 # /shm when that directory is present. In the Docker container, /shm is
 # present but defaults to 64 MB.
 # https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
