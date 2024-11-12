@@ -48,10 +48,10 @@ ENV PATH="/root/.local/bin/:$PATH"
 # https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
 ENV JOBLIB_TEMP_FOLDER=/tmp
 
-ENV VERSION=8.0.1 \
+ENV VERSION=8.1.0 \
   VERSION_MAJOR=8 \
-  VERSION_MINOR=0 \
-  VERSION_MICRO=1
+  VERSION_MINOR=1 \
+  VERSION_MICRO=0
 
 # This build target is for testing in Circle CI.
 FROM --platform=$PLATFORM production AS test
