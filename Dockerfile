@@ -48,13 +48,6 @@ ENV VERSION=8.0.1 \
   VERSION_MINOR=0 \
   VERSION_MICRO=1
 
-# Install the AWSCLI for moving match targets in the QC workflow.
-# See https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#cliv2-linux-install
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
-    unzip awscliv2.zip && \
-    ./aws/install && \
-    rm -rf aws awscliv2.zip
-
 # This build target is for testing in Circle CI.
 FROM --platform=$PLATFORM production AS test
 COPY .circleci/test_image.py .
