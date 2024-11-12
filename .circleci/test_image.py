@@ -46,7 +46,7 @@ class TestImage(unittest.TestCase):
 
     def test_shell_commands_available(self):
         # A non-exhaustive list of commands -- we just test those we'd likely use.
-        expected_cmds = "aws civis curl git pip python wget unzip".split()
+        expected_cmds = "aws civis curl git pip python wget unzip uv".split()
         for cmd in expected_cmds:
             self.assertIsNotNone(shutil.which(cmd), f"{cmd} not found in PATH")
 
