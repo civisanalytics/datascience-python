@@ -66,8 +66,8 @@ default location for staging temporary files to the /tmp directory.
 The normal default is /shm. /shm is a RAM disk which defaults to a 64 MB size
 in Docker containers, too small for typical scientific computing.
 
-# Updating existing PyPi Package Version
-1. Update version of existing package in `requirements-core.txt`
+# Updating Existing Package Versions
+1. Update versions of existing packages in `requirements-core.txt`
 2. Run script `generate-requirements-full.sh`
 
 # Creating Equivalent Local Environments
@@ -88,7 +88,7 @@ and describe any changes in the [change log](CHANGELOG.md).
 ## For Maintainers
 
 This repo has autobuild enabled. Any PR that is merged to master will
-be built as the `latest` tag on Dockerhub.
+be built as the `latest` tag on DockerHub.
 Once you are ready to create a new version, go to the "releases" tab of the repository and click
 "Draft a new release". GitHub will prompt you to create a new tag, release title, and release
 description. The tag should use semantic versioning in the form "vX.X.X"; "major.minor.micro".
