@@ -3,6 +3,7 @@
 import os
 import re
 import shutil
+import subprocess
 import unittest
 
 
@@ -45,10 +46,23 @@ class TestImage(unittest.TestCase):
         import civis.utils  # noqa: F401
 
     def test_shell_commands_available(self):
+        """Ensure the main shell commands are available."""
         # A non-exhaustive list of commands -- we just test those we'd likely use.
         expected_cmds = "aws civis curl git pip python wget unzip uv".split()
         for cmd in expected_cmds:
             self.assertIsNotNone(shutil.which(cmd), f"{cmd} not found in PATH")
+
+    def test_apt_get(self):
+        """Ensure that apt-get works in the image."""
+        cmd = "apt-get update -y && apt-get install -y htop"
+        try:
+            subprocess.check_call(cmd, shell=True)
+        except subprocess.CalledProcessError as e:
+            self.fail(
+                f"apt-get test failed with return code {e.returncode}\n"
+                f"stdout: {e.stdout}\n"
+                f"stderr: {e.stderr}"
+            )
 
 
 if __name__ == "__main__":
