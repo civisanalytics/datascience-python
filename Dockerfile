@@ -40,7 +40,8 @@ RUN pip install --progress-bar off --no-cache-dir -r requirements-full.txt && \
 # Install uv.
 ADD https://astral.sh/uv/0.5.1/install.sh /uv-installer.sh
 RUN sh /uv-installer.sh && rm /uv-installer.sh
-ENV PATH="/root/.local/bin/:$PATH"
+ENV PATH="/root/.local/bin/:$PATH" \
+  UV_SYSTEM_PYTHON=1
 
 # Instruct joblib to use disk for temporary files. Joblib defaults to
 # /shm when that directory is present. In the Docker container, /shm is
