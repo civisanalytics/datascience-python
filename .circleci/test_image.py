@@ -48,7 +48,7 @@ class TestImage(unittest.TestCase):
     def test_shell_commands_available(self):
         """Ensure the main shell commands are available."""
         # A non-exhaustive list of commands -- we just test those we'd likely use.
-        expected_cmds = "aws civis curl git pip python wget unzip uv".split()
+        expected_cmds = "aws civis curl git pip python unzip uv wget".split()
         for cmd in expected_cmds:
             self.assertIsNotNone(shutil.which(cmd), f"{cmd} not found in PATH")
 

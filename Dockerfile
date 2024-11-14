@@ -54,7 +54,7 @@ ENV VERSION=8.1.0 \
   VERSION_MINOR=1 \
   VERSION_MICRO=0
 
-# This build target is for testing in Circle CI.
+# This build target is for testing in CircleCI.
 FROM --platform=$PLATFORM production AS test
 COPY .circleci/test_image.py .
 COPY CHANGELOG.md .
