@@ -52,9 +52,8 @@ class TestImage(unittest.TestCase):
         for cmd in expected_cmds:
             self.assertIsNotNone(shutil.which(cmd), f"{cmd} not found in PATH")
 
-    def test_apt_get(self):
-        """Ensure that apt-get works in the image."""
-        cmd = "apt-get update -y && apt-get install -y htop"
+    def _test_shell_command(self, cmd: str):
+        """Check if the shell command runs successfully in the image."""
         try:
             subprocess.check_call(cmd, shell=True)
         except subprocess.CalledProcessError as e:
@@ -63,6 +62,14 @@ class TestImage(unittest.TestCase):
                 f"stdout: {e.stdout}\n"
                 f"stderr: {e.stderr}"
             )
+
+    def test_apt_get(self):
+        """Ensure that apt-get works in the image."""
+        self._test_shell_command("apt-get update -y && apt-get install -y htop")
+
+    def test_uv(self):
+        """Ensure that uv works in the image."""
+        self._test_shell_command("uv pip install python-iso639")
 
 
 if __name__ == "__main__":
