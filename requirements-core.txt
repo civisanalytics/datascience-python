@@ -1,11 +1,11 @@
 # awscli v2 is not officially available on PyPI (https://github.com/aws/aws-cli/issues/4947).
 # Specifying awscli in requirements-core.txt here ensures that it (and its transitive dependencies)
 # are taken into account when generating the final requirements-full.txt file.
-awscli @ git+https://github.com/aws/aws-cli@2.19.5
-boto3==1.35.58
-civis==2.4.0
-numpy==2.1.3
+awscli @ git+https://github.com/aws/aws-cli@2.22.33
+boto3==1.35.97
+civis==2.4.3
+numpy==2.2.1
 pandas==2.2.3
 requests==2.32.3
-scikit-learn==1.5.2
-scipy==1.14.1
+scikit-learn==1.6.1
+scipy==1.15.1

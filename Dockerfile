@@ -1,5 +1,5 @@
 ARG PLATFORM=linux/x86_64
-ARG BASE_IMAGE=python:3.12.7-slim
+ARG BASE_IMAGE=python:3.12.8-slim
 
 # This is the primary build target used for the production image
 FROM --platform=$PLATFORM $BASE_IMAGE AS production
@@ -38,7 +38,7 @@ RUN pip install --progress-bar off --no-cache-dir -r requirements-full.txt && \
   rm requirements-full.txt
 
 # Install uv.
-ADD https://astral.sh/uv/0.5.1/install.sh /uv-installer.sh
+ADD https://astral.sh/uv/0.5.18/install.sh /uv-installer.sh
 RUN sh /uv-installer.sh && rm /uv-installer.sh
 ENV PATH="/root/.local/bin/:$PATH" \
   UV_SYSTEM_PYTHON=1
@@ -49,9 +49,9 @@ ENV PATH="/root/.local/bin/:$PATH" \
 # https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
 ENV JOBLIB_TEMP_FOLDER=/tmp
 
-ENV VERSION=8.1.0 \
+ENV VERSION=8.2.0 \
   VERSION_MAJOR=8 \
-  VERSION_MINOR=1 \
+  VERSION_MINOR=2 \
   VERSION_MICRO=0
 
 # This build target is for testing in CircleCI.
