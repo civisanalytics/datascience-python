@@ -1,5 +1,5 @@
 ARG PLATFORM=linux/x86_64
-ARG BASE_IMAGE=python:3.12.8-slim
+ARG BASE_IMAGE=python:3.13.5-slim
 
 # This is the primary build target used for the production image
 FROM --platform=$PLATFORM $BASE_IMAGE AS production
@@ -38,7 +38,7 @@ RUN pip install --progress-bar off --no-cache-dir -r requirements-full.txt && \
   rm requirements-full.txt
 
 # Install uv.
-ADD https://astral.sh/uv/0.5.18/install.sh /uv-installer.sh
+ADD https://astral.sh/uv/0.7.8/install.sh /uv-installer.sh
 RUN sh /uv-installer.sh && rm /uv-installer.sh
 ENV PATH="/root/.local/bin/:$PATH" \
   UV_SYSTEM_PYTHON=1
