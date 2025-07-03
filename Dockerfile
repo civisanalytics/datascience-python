@@ -1,8 +1,7 @@
 ARG PLATFORM=linux/x86_64
 ARG BASE_IMAGE=python:3.13.5-slim
 
-# This is the primary build target used for the production image
-FROM --platform=$PLATFORM $BASE_IMAGE AS production
+FROM --platform=$PLATFORM $BASE_IMAGE AS uv-installed
 
 # Disable pip warnings https://stackoverflow.com/a/72551258
 ENV PIP_ROOT_USER_ACTION=ignore
@@ -32,16 +31,19 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/*
 
-COPY requirements-full.txt .
-
-RUN pip install --progress-bar off --no-cache-dir -r requirements-full.txt && \
-  rm requirements-full.txt
-
 # Install uv.
-ADD https://astral.sh/uv/0.7.8/install.sh /uv-installer.sh
+ADD https://astral.sh/uv/0.7.19/install.sh /uv-installer.sh
 RUN sh /uv-installer.sh && rm /uv-installer.sh
 ENV PATH="/root/.local/bin/:$PATH" \
   UV_SYSTEM_PYTHON=1
+
+# This is the primary build target used for the production image
+FROM --platform=$PLATFORM uv-installed AS production
+
+COPY requirements-full.txt .
+
+RUN uv pip install --no-progress --no-cache -r requirements-full.txt && \
+  rm requirements-full.txt
 
 # Instruct joblib to use disk for temporary files. Joblib defaults to
 # /shm when that directory is present. In the Docker container, /shm is
@@ -61,8 +63,7 @@ COPY CHANGELOG.md .
 
 # This build target is for updating dependencies.
 # See generate-requirements.full.sh.
-FROM --platform=$PLATFORM $BASE_IMAGE AS pip-tools
-RUN pip install -U --no-cache-dir pip pip-tools --progress-bar off
+FROM --platform=$PLATFORM uv-installed AS update-deps
 CMD ["/bin/bash"]
 
 # Default to the production build target.

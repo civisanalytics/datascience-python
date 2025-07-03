@@ -1,9 +1,9 @@
 services:
-  pip-tools:
+  update-deps:
     build:
       context: .
       dockerfile: ./Dockerfile
-      target: pip-tools
+      target: update-deps
     volumes:
       - .:/app
     stdin_open: true
