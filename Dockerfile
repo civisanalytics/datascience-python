@@ -51,9 +51,9 @@ RUN uv pip install --no-progress --no-cache -r requirements-full.txt && \
 # https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
 ENV JOBLIB_TEMP_FOLDER=/tmp
 
-ENV VERSION=8.2.0 \
+ENV VERSION=8.3.0 \
   VERSION_MAJOR=8 \
-  VERSION_MINOR=2 \
+  VERSION_MINOR=3 \
   VERSION_MICRO=0
 
 # This build target is for testing in CircleCI.

@@ -9,6 +9,20 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [8.3.0]
+
+- Python version updated: 3.12.8 -> 3.13.5
+- uv version updated: 0.5.18 -> 0.7.19
+- New core dependencies added:
+  * polars 1.31.0 (supported by civis-python since v2.6.0)
+- Core dependencies updated to latest versions:
+  * awscli 2.22.33 -> 2.27.48
+  * boto3 1.35.97 -> 1.39.2
+  * civis 2.4.3 -> 2.7.1
+  * numpy 2.2.1 -> 2.3.1
+  * scikit-learn 1.6.1 -> 1.7.0
+  * scipy 1.15.1 -> 1.16.0
+
 ## [8.2.0]
 
 - Python version updated: 3.12.7 -> 3.12.8
