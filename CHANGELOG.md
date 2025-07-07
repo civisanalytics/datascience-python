@@ -20,6 +20,8 @@ Version number changes (major.minor.micro) in this package denote the following:
   * boto3 1.35.97 -> 1.39.2
   * civis 2.4.3 -> 2.7.1
   * numpy 2.2.1 -> 2.3.1
+  * pandas 2.2.3 -> 2.3.0
+  * requests 2.32.3 -> 2.32.4
   * scikit-learn 1.6.1 -> 1.7.0
   * scipy 1.15.1 -> 1.16.0
 
