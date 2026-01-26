@@ -12,6 +12,16 @@ Version number changes (major.minor.micro) in this package denote the following:
 ## [8.4.0] - 2026-03-02
 
 - Python version updated: 3.13.5 -> 3.14.2
+- Core dependencies updated to latest versions:
+  * awscli 2.27.48 -> 2.33.7
+  * boto3 1.39.2 -> 1.42.34
+  * civis 2.7.1 -> 2.8.0
+  * numpy 2.3.1 -> 2.4.1
+  * pandas 2.3.0 -> 2.3.3
+  * polars 1.31.0 -> 1.37.1
+  * requests 2.32.4 -> 2.32.5
+  * scikit-learn 1.7.0 -> 1.8.0
+  * scipy 1.16.0 -> 1.17.0
 
 ## [8.3.0]
 
