@@ -32,7 +32,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
   rm -rf /var/lib/apt/lists/*
 
 # Install uv.
-ADD https://astral.sh/uv/0.7.19/install.sh /uv-installer.sh
+ADD https://astral.sh/uv/0.9.26/install.sh /uv-installer.sh
 RUN sh /uv-installer.sh && rm /uv-installer.sh
 ENV PATH="/root/.local/bin/:$PATH" \
   UV_SYSTEM_PYTHON=1

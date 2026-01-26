@@ -12,6 +12,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 ## [8.4.0] - 2026-03-02
 
 - Python version updated: 3.13.5 -> 3.14.2
+- uv version updated: 0.7.19 -> 0.9.26
 - Core dependencies updated to latest versions:
   * awscli 2.27.48 -> 2.33.7
   * boto3 1.39.2 -> 1.42.34
