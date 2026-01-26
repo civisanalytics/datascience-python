@@ -9,6 +9,10 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [8.4.0] - 2026-03-02
+
+- Python version updated: 3.13.5 -> 3.14.2
+
 ## [8.3.0]
 
 - Python version updated: 3.12.8 -> 3.13.5
