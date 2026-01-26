@@ -9,10 +9,13 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
-## [8.4.0] - 2026-03-02
+## [8.4.0]
 
 - Python version updated: 3.13.5 -> 3.13.11
 - uv version updated: 0.7.19 -> 0.9.26
+- New core dependencies added:
+  * matplotlib 3.10.8
+  * seaborn 0.13.2
 - Core dependencies updated to latest versions:
   * awscli 2.27.48 -> 2.33.7
   * boto3 1.39.2 -> 1.42.34
