@@ -23,6 +23,8 @@ Version number changes (major.minor.micro) in this package denote the following:
   * requests 2.32.4 -> 2.32.5
   * scikit-learn 1.7.0 -> 1.8.0
   * scipy 1.16.0 -> 1.17.0
+- software-properties-common removed due to the base image python:3.14.2
+  being based on Debian 13 Trixie
 
 ## [8.3.0]
 

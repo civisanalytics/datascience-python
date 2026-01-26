@@ -11,7 +11,6 @@ LABEL maintainer=support@civisanalytics.com
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
   apt-get install -y --no-install-recommends locales && \
   locale-gen en_US.UTF-8 && \
-  apt-get install -y --no-install-recommends software-properties-common && \
   apt-get install -y --no-install-recommends \
   make \
   automake \
