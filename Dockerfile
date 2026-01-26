@@ -1,5 +1,5 @@
 ARG PLATFORM=linux/x86_64
-ARG BASE_IMAGE=python:3.14.2-slim
+ARG BASE_IMAGE=python:3.13.11-slim
 
 FROM --platform=$PLATFORM $BASE_IMAGE AS uv-installed
 

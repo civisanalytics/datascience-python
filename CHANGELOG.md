@@ -11,7 +11,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## [8.4.0] - 2026-03-02
 
-- Python version updated: 3.13.5 -> 3.14.2
+- Python version updated: 3.13.5 -> 3.13.11
 - uv version updated: 0.7.19 -> 0.9.26
 - Core dependencies updated to latest versions:
   * awscli 2.27.48 -> 2.33.7
@@ -23,7 +23,7 @@ Version number changes (major.minor.micro) in this package denote the following:
   * requests 2.32.4 -> 2.32.5
   * scikit-learn 1.7.0 -> 1.8.0
   * scipy 1.16.0 -> 1.17.0
-- software-properties-common removed due to the base image python:3.14.2
+- software-properties-common removed due to the base image python:3.13.11
   being based on Debian 13 Trixie
 
 ## [8.3.0]
