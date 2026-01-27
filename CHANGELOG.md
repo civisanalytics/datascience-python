@@ -9,7 +9,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
-## [8.4.0]
+## [8.4.0] - 2026-02-16
 
 - Python version updated: 3.13.5 -> 3.13.11
 - uv version updated: 0.7.19 -> 0.9.26
