@@ -9,6 +9,26 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [8.4.0] - 2026-02-16
+
+- Python version updated: 3.13.5 -> 3.13.11
+- uv version updated: 0.7.19 -> 0.9.26
+- New core dependencies added:
+  * matplotlib 3.10.8
+  * seaborn 0.13.2
+- Core dependencies updated to latest versions:
+  * awscli 2.27.48 -> 2.33.7
+  * boto3 1.39.2 -> 1.42.34
+  * civis 2.7.1 -> 2.8.0
+  * numpy 2.3.1 -> 2.4.1
+  * pandas 2.3.0 -> 2.3.3
+  * polars 1.31.0 -> 1.37.1
+  * requests 2.32.4 -> 2.32.5
+  * scikit-learn 1.7.0 -> 1.8.0
+  * scipy 1.16.0 -> 1.17.0
+- software-properties-common removed due to the base image python:3.13.11
+  being based on Debian 13 Trixie
+
 ## [8.3.0]
 
 - Python version updated: 3.12.8 -> 3.13.5
