@@ -71,8 +71,8 @@ in Docker containers, too small for typical scientific computing.
 > [!NOTE]  
 > The choice of packages pre-installed in this Docker image is intentionally limited
 > to a very small number of them.
-> Historically, adding more packages led to compatibility issues among new and existing
-> packages, as well as their transtive dependencies.
+> Historically, adding more packages had led to thorny incompatibility issues among new
+> and existing packages, as well as their transtive dependencies.
 > For this reason, requests for adding new package are generally not entertained.
 
 1. Update versions of existing packages in `requirements-core.txt`
