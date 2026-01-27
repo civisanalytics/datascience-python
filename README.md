@@ -67,6 +67,14 @@ The normal default is /shm. /shm is a RAM disk which defaults to a 64 MB size
 in Docker containers, too small for typical scientific computing.
 
 # Updating Existing Package Versions
+
+> [!NOTE]  
+> The choice of packages pre-installed in this Docker image is intentionally limited
+> to a very small number of them.
+> Historically, adding more packages led to compatibility issues among new and existing
+> packages, as well as their transtive dependencies.
+> For this reason, requests for adding new package are generally not entertained.
+
 1. Update versions of existing packages in `requirements-core.txt`
 2. Run script `generate-requirements-full.sh`
 
