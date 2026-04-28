@@ -1,5 +1,5 @@
 ARG PLATFORM=linux/x86_64
-ARG BASE_IMAGE=python:3.13.11-slim
+ARG BASE_IMAGE=python:3.13.13-slim
 
 FROM --platform=$PLATFORM $BASE_IMAGE AS uv-installed
 
@@ -31,7 +31,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
   rm -rf /var/lib/apt/lists/*
 
 # Install uv.
-ADD https://astral.sh/uv/0.9.26/install.sh /uv-installer.sh
+ADD https://astral.sh/uv/0.11.8/install.sh /uv-installer.sh
 RUN sh /uv-installer.sh && rm /uv-installer.sh
 ENV PATH="/root/.local/bin/:$PATH" \
   UV_SYSTEM_PYTHON=1
@@ -50,9 +50,9 @@ RUN uv pip install --no-progress --no-cache -r requirements-full.txt && \
 # https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
 ENV JOBLIB_TEMP_FOLDER=/tmp
 
-ENV VERSION=8.4.0 \
+ENV VERSION=8.5.0 \
   VERSION_MAJOR=8 \
-  VERSION_MINOR=4 \
+  VERSION_MINOR=5 \
   VERSION_MICRO=0
 
 # This build target is for testing in CircleCI.
