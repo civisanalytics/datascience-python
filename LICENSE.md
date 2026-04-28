@@ -1,4 +1,4 @@
-Copyright (c) 2017, Civis Analytics
+Copyright (c) 2017-2026, Civis Analytics
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

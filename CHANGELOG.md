@@ -9,6 +9,21 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [8.5.0] - 2026-04-28
+
+- Python version updated: 3.13.11 -> 3.13.13
+- uv version updated: 0.9.26 -> 0.11.8
+- Core dependencies updated to latest versions:
+  * awscli 2.33.7 -> 2.34.38
+  * boto3 1.42.34 -> 1.42.97
+  * civis 2.8.0 -> 2.9.1
+  * matplotlib 3.10.8 -> 3.10.9
+  * numpy 2.4.1 -> 2.4.4
+  * polars 1.37.1 -> 1.40.1
+  * requests 2.32.5 -> 2.33.1
+  * scipy 1.17.0 -> 1.17.1
+
+
 ## [8.4.0] - 2026-02-16
 
 - Python version updated: 3.13.5 -> 3.13.11
