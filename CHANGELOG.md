@@ -9,6 +9,19 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [9.0.0] - 2026-07-xx
+
+- Python version updated: 3.13.13 -> 3.14.5
+- uv version updated: 0.11.8 -> 0.11.18
+- Core dependencies updated to latest versions:
+  * awscli 2.34.38 -> 2.34.58
+  * boto3 1.42.97 -> 1.43.19
+  * numpy 2.4.4 -> 2.4.6
+  * pandas 2.3.3 -> 3.0.3
+  * polars 1.40.1 -> 1.41.2
+  * requests 2.33.1 -> 2.34.2
+  * scikit-learn 1.8.0 -> 1.9.0
+
 ## [8.5.0] - 2026-05-04
 
 - Python version updated: 3.13.11 -> 3.13.13
