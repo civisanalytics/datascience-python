@@ -1,5 +1,5 @@
 ARG PLATFORM=linux/x86_64
-ARG BASE_IMAGE=python:3.14.5-slim
+ARG BASE_IMAGE=python:3.14.6-slim
 
 FROM --platform=$PLATFORM $BASE_IMAGE AS uv-installed
 
@@ -31,7 +31,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
   rm -rf /var/lib/apt/lists/*
 
 # Install uv.
-ADD https://astral.sh/uv/0.11.18/install.sh /uv-installer.sh
+ADD https://astral.sh/uv/0.11.28/install.sh /uv-installer.sh
 RUN sh /uv-installer.sh && rm /uv-installer.sh
 ENV PATH="/root/.local/bin/:$PATH" \
   UV_SYSTEM_PYTHON=1

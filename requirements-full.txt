@@ -4,23 +4,23 @@ attrs==26.1.0
     # via
     #   jsonschema
     #   referencing
-awscli @ git+https://github.com/aws/aws-cli@a40e66cbfe1f1890e3e8d95bc549cfd8f7f5e596
+awscli @ git+https://github.com/aws/aws-cli@305c68ef3fa68a15cdd8f50d9e7077c0e1ff8877
     # via -r requirements-core.txt
-awscrt==0.32.2
+awscrt==0.35.0
     # via awscli
-boto3==1.43.19
+boto3==1.43.46
     # via -r requirements-core.txt
-botocore==1.43.19
+botocore==1.43.46
     # via
     #   boto3
     #   s3transfer
-certifi==2026.5.20
+certifi==2026.6.17
     # via requests
-charset-normalizer==3.4.7
+charset-normalizer==3.4.9
     # via requests
 civis==2.9.1
     # via -r requirements-core.txt
-click==8.4.1
+click==8.4.2
     # via civis
 cloudpickle==3.1.2
     # via civis
@@ -55,13 +55,13 @@ jsonschema-specifications==2025.9.1
     # via jsonschema
 kiwisolver==1.5.0
     # via matplotlib
-matplotlib==3.10.9
+matplotlib==3.11.0
     # via
     #   -r requirements-core.txt
     #   seaborn
-narwhals==2.22.0
+narwhals==2.24.0
     # via scikit-learn
-numpy==2.4.6
+numpy==2.5.1
     # via
     #   -r requirements-core.txt
     #   contourpy
@@ -76,11 +76,11 @@ pandas==3.0.3
     # via
     #   -r requirements-core.txt
     #   seaborn
-pillow==12.2.0
+pillow==12.3.0
     # via matplotlib
-polars==1.41.2
+polars==1.42.1
     # via -r requirements-core.txt
-polars-runtime-32==1.41.2
+polars-runtime-32==1.42.1
     # via polars
 prompt-toolkit==3.0.51
     # via awscli
@@ -102,7 +102,7 @@ requests==2.34.2
     # via
     #   -r requirements-core.txt
     #   civis
-rpds-py==2026.5.1
+rpds-py==2026.6.3
     # via
     #   jsonschema
     #   referencing
@@ -110,11 +110,11 @@ ruamel-yaml==0.19.1
     # via awscli
 ruamel-yaml-clib==0.2.15
     # via awscli
-s3transfer==0.18.0
+s3transfer==0.19.1
     # via boto3
 scikit-learn==1.9.0
     # via -r requirements-core.txt
-scipy==1.17.1
+scipy==1.18.0
     # via
     #   -r requirements-core.txt
     #   scikit-learn
