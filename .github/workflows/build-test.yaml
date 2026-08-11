@@ -1,0 +1,42 @@
+name: Build and test image
+
+# Reusable gate shared by release.yaml and latest.yaml, so neither can publish an
+# image that fails the test suite. This workflow never sees the Docker Hub
+# credentials: `workflow_call` below declares no `secrets:`, and neither caller
+# passes `secrets:` or `secrets: inherit`.
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4.2.0
+
+      # The publishing jobs reuse this cache to avoid rebuilding from scratch.
+      # `scope` isolates it from any other build in the repo; `mode=max` also
+      # caches stages that aren't part of the exported image. `ignore-error` keeps
+      # a flaky cache export -- this image is several GB -- from failing the gate
+      # and thereby blocking a publish, since the cache is only an optimization.
+      - name: Build the test image
+        uses: docker/build-push-action@v7.3.0
+        with:
+          context: .
+          target: test
+          load: true
+          push: false
+          tags: ds-python:test
+          cache-from: type=gha,scope=ds-python
+          cache-to: type=gha,scope=ds-python,mode=max,ignore-error=true
+
+      - name: Run the image test suite
+        run: docker run --rm ds-python:test /test_image.py -vv

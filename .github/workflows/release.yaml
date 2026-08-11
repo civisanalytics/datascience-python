@@ -1,0 +1,115 @@
+name: Publish release to Docker Hub
+
+# Publishes the versioned Docker Hub tags for a release: "major", "major.minor",
+# and "major.minor.micro". Replaces Docker Hub's Automated Builds, which is
+# deprecated and retires on 2027-04-01:
+# https://docs.docker.com/docker-hub/repos/manage/builds/migrate/
+#
+# The trigger is the tag push, which is what publishing a GitHub release creates.
+# It also matches how Automated Builds worked -- its build rules matched on tags.
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: read
+
+# Two releases must not publish at once: they both move the "major" and
+# "major.minor" tags, so interleaved pushes could leave "9" pointing at the older
+# of them. One group for all releases serializes them, and a re-run queues behind
+# an in-flight publish rather than cancelling it.
+concurrency:
+  group: dockerhub-release
+  cancel-in-progress: false
+
+jobs:
+  # test_image.py checks VERSION against CHANGELOG.md, but nothing checks either
+  # one against the tag being released. Without this, tagging v9.0.1 after
+  # forgetting the Dockerfile bump publishes an image labelled 9.0.0. This runs
+  # ahead of the build so a mistyped tag fails in seconds rather than after a
+  # full image build and test run.
+  check-version:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Check the Dockerfile version matches the tag
+        run: |
+          tag_version="${GITHUB_REF_NAME#v}"
+          dockerfile_version="$(
+            grep -m1 '^ENV VERSION=' Dockerfile \
+              | sed -E 's/^ENV VERSION=([0-9]+\.[0-9]+\.[0-9]+).*/\1/'
+          )"
+          if [ "${tag_version}" != "${dockerfile_version}" ]; then
+            echo "::error::Tag ${GITHUB_REF_NAME} is version ${tag_version}, but the Dockerfile sets VERSION=${dockerfile_version}. Bump VERSION, VERSION_MAJOR, VERSION_MINOR, and VERSION_MICRO in the Dockerfile before tagging a release."
+            exit 1
+          fi
+          echo "Dockerfile VERSION=${dockerfile_version} matches tag ${GITHUB_REF_NAME}."
+
+  test:
+    needs: check-version
+    uses: ./.github/workflows/build-test.yaml
+
+  push:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    environment: dockerhub-publish
+    permissions:
+      contents: read
+      # Lets the job request a GitHub OIDC token, which Docker Hub exchanges for a
+      # short-lived registry token. Required for the keyless login below.
+      id-token: write
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7.0.1
+
+      # `latest=false` is required. The default (latest=auto) would add a `latest`
+      # tag to this push, racing latest.yaml, which owns `latest` on merges to master.
+      - name: Derive the Docker Hub tags
+        id: meta
+        uses: docker/metadata-action@v6.2.0
+        with:
+          images: civisanalytics/datascience-python
+          flavor: latest=false
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4.2.0
+
+      # Keyless login over OIDC -- no stored Docker Hub token. login-action
+      # exchanges this run's GitHub OIDC token for a Docker Hub token that expires
+      # in minutes and can't be reused. `password` is deliberately omitted; setting
+      # it would switch the action back to static-credential mode. The connection
+      # ID is not a secret, so it lives in a repository variable.
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v4.6.0
+        env:
+          DOCKERHUB_OIDC_CONNECTIONID: ${{ vars.DOCKERHUB_OIDC_CONNECTIONID }}
+        with:
+          username: civisanalytics
+
+      # provenance and sbom are off so we keep publishing a plain single-platform
+      # manifest. Buildx otherwise attaches attestations, which turn the push into
+      # a multi-manifest image index -- a shape some clients that pull this image
+      # can't handle, and not what Automated Builds produced.
+      #
+      # `platforms` is intentionally unset: the Dockerfile already pins the platform
+      # via its own ARG PLATFORM, and a second mechanism could disagree with it.
+      - name: Build and push
+        uses: docker/build-push-action@v7.3.0
+        with:
+          context: .
+          target: production
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          provenance: false
+          sbom: false
+          cache-from: type=gha,scope=ds-python
