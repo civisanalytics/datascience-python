@@ -1,0 +1,28 @@
+name: Build and test image
+description: Build the test target and run the image test suite.
+
+# A composite action rather than a reusable workflow so its steps run inside the
+# caller's job, sharing one Buildx instance with the production build that
+# follows. The production build then reuses these exact layers instead of
+# rebuilding them.
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v4.2.0
+
+    - name: Build the test image
+      uses: docker/build-push-action@v7.3.0
+      with:
+        context: .
+        target: test
+        load: true
+        push: false
+        tags: ds-python:test
+        cache-from: type=gha,scope=ds-python
+        cache-to: type=gha,scope=ds-python,ignore-error=true
+
+    - name: Run the image test suite
+      shell: bash
+      run: docker run --rm ds-python:test /test_image.py -vv
