@@ -31,7 +31,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
   rm -rf /var/lib/apt/lists/*
 
 # Install uv.
-ADD https://astral.sh/uv/0.11.28/install.sh /uv-installer.sh
+ADD https://astral.sh/uv/0.12.13/install.sh /uv-installer.sh
 RUN sh /uv-installer.sh && rm /uv-installer.sh
 ENV PATH="/root/.local/bin/:$PATH" \
   UV_SYSTEM_PYTHON=1
@@ -50,9 +50,9 @@ RUN uv pip install --no-progress --no-cache -r requirements-full.txt && \
 # https://github.com/joblib/joblib/blob/0.11/joblib/parallel.py#L328L342
 ENV JOBLIB_TEMP_FOLDER=/tmp
 
-ENV VERSION=9.0.0 \
+ENV VERSION=9.1.0 \
   VERSION_MAJOR=9 \
-  VERSION_MINOR=0 \
+  VERSION_MINOR=1 \
   VERSION_MICRO=0
 
 # This build target is for testing in CircleCI.
