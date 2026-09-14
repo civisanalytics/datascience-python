@@ -5,6 +5,9 @@ description: Build the test target and run the image test suite.
 # caller's job, sharing one Buildx instance with the production build that
 # follows. The production build then reuses these exact layers instead of
 # rebuilding them.
+#
+# No cross-run layer cache, deliberately: every publish builds from scratch so
+# the Dockerfile's apt-get install picks up whatever upstream has at that moment.
 
 runs:
   using: composite
@@ -20,8 +23,6 @@ runs:
         load: true
         push: false
         tags: ds-python:test
-        cache-from: type=gha,scope=ds-python
-        cache-to: type=gha,scope=ds-python,ignore-error=true
 
     - name: Run the image test suite
       shell: bash
