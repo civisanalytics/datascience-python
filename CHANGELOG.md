@@ -9,6 +9,8 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+- Added autobuilds via GitHub Actions.
+
 ## [9.1.0] - 2026-09-11
 
 - uv version updated: 0.11.28 -> 0.12.13

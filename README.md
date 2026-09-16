@@ -95,14 +95,34 @@ and describe any changes in the [change log](CHANGELOG.md).
 
 ## For Maintainers
 
-This repo has autobuild enabled. Any PR that is merged to master will
-be built as the `latest` tag on DockerHub.
-Once you are ready to create a new version, go to the "releases" tab of the repository and click
-"Draft a new release". GitHub will prompt you to create a new tag, release title, and release
-description. The tag should use semantic versioning in the form "vX.X.X"; "major.minor.micro".
-The title of the release should be the same as the tag. Include a change log in the release description.
-Once the release is tagged, DockerHub will automatically build three identical containers, with labels
-"major", "major.minor", and "major.minor.micro".
+Publishing to DockerHub is handled by GitHub Actions
+(see [.github/workflows](.github/workflows)). Both publishing workflows build the
+image and run the test suite before they push anything.
+
+There is no stored DockerHub password or access token. The workflows authenticate
+over OIDC: each run exchanges a GitHub identity token for a DockerHub token that
+expires within minutes. This requires two things a repository admin must set up
+once -- an OIDC connection on the `civisanalytics` DockerHub organization, and a
+`DOCKERHUB_OIDC_CONNECTIONID` repository variable holding that connection's ID
+(it is an identifier, not a secret). The publishing jobs also run in a
+`dockerhub-publish` environment restricted to `master` and `v*.*.*`.
+
+Any PR merged to master is published as the `latest` tag on DockerHub.
+
+To cut a new version:
+
+1. Bump `VERSION`, `VERSION_MAJOR`, `VERSION_MINOR`, and `VERSION_MICRO`
+   in the [Dockerfile](Dockerfile), and move the `Unreleased` section of the
+   [change log](CHANGELOG.md) under a `[major.minor.micro]` heading. Do this
+   *before* tagging -- the release workflow refuses to publish if the Dockerfile's
+   `VERSION` doesn't match the tag.
+2. Once that is merged, go to the "releases" tab of the repository and click
+   "Draft a new release". GitHub will prompt you to create a new tag, release title, and release
+   description. The tag must use semantic versioning in the form "vX.X.X"; "major.minor.micro".
+   The leading "v" is required -- tags without it won't trigger a build.
+   The title of the release should be the same as the tag. Include a change log in the release description.
+3. Publishing the release creates the tag, which builds and pushes three identical
+   containers labelled "major", "major.minor", and "major.minor.micro".
 
 # License
 
