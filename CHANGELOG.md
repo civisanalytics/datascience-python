@@ -9,6 +9,21 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [9.2.0] - 2026-11-09
+
+- Upgraded pip, uv, and the AWS CLI to versions with updated CA certificate
+  bundles, in response to the eMudhra certificate authority compromise.
+- Python version updated: 3.14.6 -> 3.14.10 (pip 26.1.2 -> 26.2.2)
+- uv version updated: 0.12.13 -> 0.13.7
+- Core dependencies updated to latest versions:
+  * awscli 2.36.43 -> 2.39.6
+  * boto3 1.43.92 -> 1.43.126
+  * civis 2.10.0 -> 2.11.0
+  * matplotlib 3.11.1 -> 3.11.2
+  * numpy 2.5.3 -> 2.5.4
+  * pandas 3.0.5 -> 3.1.1
+- Added CLAUDE.md for contributors using Claude Code.
+
 ## [9.1.1] - 2026-09-17
 
 - Added autobuilds via GitHub Actions.
